@@ -40,18 +40,34 @@ fi
 # Key Bindings
 #
 
-if [[ -n "$key_info" ]]; then
-  # Emacs
-  bindkey -M emacs "$key_info[Control]P" history-substring-search-up
-  bindkey -M emacs "$key_info[Control]N" history-substring-search-down
+#if [[ -n "$key_info" ]]; then
+  ## Emacs
+  #bindkey -M emacs "$key_info[Control]P" history-substring-search-up
+  #bindkey -M emacs "$key_info[Control]N" history-substring-search-down
 
-  # Vi
-  bindkey -M vicmd "k" history-substring-search-up
-  bindkey -M vicmd "j" history-substring-search-down
+  ## Vi
+  #bindkey -M vicmd "k" history-substring-search-up
+  #bindkey -M vicmd "j" history-substring-search-down
 
-  # Emacs and Vi
-  for keymap in 'emacs' 'viins'; do
-    bindkey -M "$keymap" "$key_info[Up]" history-substring-search-up
-    bindkey -M "$keymap" "$key_info[Down]" history-substring-search-down
-  done
-fi
+  ## Emacs and Vi
+  #for keymap in 'emacs' 'viins'; do
+    #bindkey -M "$keymap" "$key_info[Up]" history-substring-search-up
+    #bindkey -M "$keymap" "$key_info[Down]" history-substring-search-down
+  #done
+#fi
+
+## Arrow Keys ###########################################
+
+# OPTION 2: for iTerm2 running on Apple MacBook laptops
+zmodload zsh/terminfo
+bindkey "$terminfo[cuu1]" history-substring-search-up
+bindkey "$terminfo[cud1]" history-substring-search-down
+
+# OPTION 3: for Ubuntu 12.04, Fedora 21, and MacOSX 10.9
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+## VI mode ##############################################
+
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
