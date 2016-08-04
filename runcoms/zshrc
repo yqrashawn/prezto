@@ -48,6 +48,8 @@ export VISUAL=$EDITOR
 # For a full list of active aliases, run `alias`.
 #
 
+alias vimdiff='nvim -d'
+
 #for jump
 alias k='jump'
 alias kk='mark'
@@ -68,8 +70,9 @@ alias grep='grep -r'
 alias ackl='ack -l'
 alias sss='proxychains4'
 alias rrm='rm *.*~ && rm .*~'
-alias lsl='ls -l'
+alias l='ls -l'
 alias pproxy='proxychains4'
+alias v.='v .'
 alias p='you-get -p mpv '
 alias v='nvim'
 alias finalz='p http://www.douyutv.com/D3D3D3'
