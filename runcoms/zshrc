@@ -63,6 +63,7 @@ alias cl='clear'
 alias o='open'
 alias lst='ls -t'
 
+alias ssync='sh ~/sync.sh'
 alias gitt='git add . && git commit -m '
 alias karaconfig='nvim /Users/Rashawn/Library/Application\ Support/Karabiner/private.xml'
 alias proxyconfig='nvim /usr/local/etc/privoxy/config'
