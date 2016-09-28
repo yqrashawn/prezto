@@ -25,6 +25,7 @@ autoload -U compinit && compinit
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
     export EDITOR='nvim'
@@ -52,12 +53,6 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 alias vimdiff='nvim -d'
 alias v2ex='v2ex-go'
 
-#for jump
-alias k='jump'
-alias kk='mark'
-alias kkk='unmark'
-alias ks='marks'
-
 alias zc="nvim ~/.zshrc"
 alias zcc="nvim ~/.zprezto/runcoms/zpreztorc"
 alias ggit='o ~/.zprezto/modules/git/README.md'
@@ -65,8 +60,6 @@ alias cl='clear'
 alias o='open'
 alias lst='ls -t'
 
-alias ssync='sh ~/sync.sh'
-alias gitt='git add . && git commit -m '
 alias karaconfig='nvim /Users/Rashawn/Library/Application\ Support/Karabiner/private.xml'
 alias proxyconfig='nvim /usr/local/etc/privoxy/config'
 alias grep='grep -r'
@@ -77,7 +70,8 @@ alias l='ls -l'
 alias pproxy='proxychains4'
 alias v.='v .'
 alias p='you-get -p mpv '
-alias v='nvim'
+alias v='fasd -f -e nvim'
+alias c='fasd_cd -i'
 alias finalz='p http://www.douyutv.com/D3D3D3'
 alias vimconfig='nvim /Users/Rashawn/.config/nvim/init.vim'
 alias ariaconfig='nvim /Users/Rashawn/.aria2/aria2.conf'
@@ -97,19 +91,8 @@ alias gitshadow="git config --global http.proxy 'socks5://127.0.0.1:1080' \
 alias gitunshadow="git config --global --unset http.proxy \
     git config -'global --unset https.proxy"
 alias banwa='ssh root@45.78.62.230 -p 26812'
-
-alias nd='devtool --watch ./'
-
-#alias cis='sudo nvram boot-args="niog=1"'
-#alias ois='sudo nvram -d boot-args'
-
 alias mongodd='mongod -dbpath ~/workspace/projects/mongodb/data'
-alias sconfig='source ~/.zshrc'
-alias wps='webpack-dev-server --devtool eval'
 alias ss='export https_proxy=http://127.0.0.1:6152;export http_proxy=http://127.0.0.1:6152 & '
-alias pokego='source bin/activate && python pokecli.py'
-alias pokego1='source ~/workspace/projects/PokemonGo-Bot/bin/activate'
-alias pokego2='python ~/workspace/projects/PokemonGo-Bot/pokecli.py'
 eval "$(thefuck --alias)"
 
 alias gff='git flow feature'

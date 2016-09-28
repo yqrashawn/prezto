@@ -33,6 +33,44 @@ Aliases
 
   - `g` is short for `git`.
 
+  - `gbl` lists branches and their commits.
+  - `gbL` lists local and remote branches and their commits.
+  - `gbx` deletes a branch.
+  - `gbX` deletes a branch irrespective of its merged status.
+  - `gca` stages all modified and deleted files. stage所有更改删除的文件,跳出见面输入commit信息
+  - `gcO` git checkout --patch 直接使用就是 discard local storage, 但是需要手动确认,可以对指定文件使用,加文件路径即可
+  - `gcf` 使用时后面跟文件路径,把修改的文件补交到上一次的commit中
+  - `gcF` 使用与上面相同,但是可以修改commit message
+  - `gcs` 查看上次commit的信息
+#### 下面四个是merge的时候选择自己的还是别人的
+  - `gCo` checks out our changes for unmerged paths.
+  - `gCO` checks out our changes for all unmerged paths.
+  - `gCt` checks out their changes for unmerged paths.
+  - `gCT` checks out their changes for all unmerged paths.
+  - `gCl` lists unmerged files. 用于查看使用nvim合并哪些文件
+#### 方便查看几个状态的文件
+  - `gdi` lists ignored files.
+  - `gdx` lists deleted files.
+  - `gdm` lists modified files.
+#### git fetch clone merge
+  - `gf` downloads objects and references from another repository.
+  - `gfc` clones a repository into a new directory.
+  - `gfm` fetches from and merges with another repository or local branch.
+#### 把文件暂存 使用gca更方便一点
+  - `gia` adds file contents to the index.加入文件
+  - `giA` adds file contents to the index interactively.交互的加入文件,可以选择文件的hunks
+  - `giu` adds file contents to the index (updates only known files).加入所有track的文件的修改
+  - `glg` 显示树状 branch log
+#### merge 用gmF比较好, merge 到一半出错重来用 gma abort
+  - `gm` joins two or more development histories together.
+  - `gmC` joins two or more development histories together but does not commit.
+  - `gmF` joins two or more development histories together but does not commit
+     generating a merge commit even if the merge resolved as a fast-forward.
+  - `gma` aborts the conflict resolution, and reconstructs the pre-merge state.
+  - `gsu` git push --set-upstream-to=用来设置远程对应的branch
+  - `gp` git push
+  - `gws` displays working-tree status in the short format.
+
 ### Branch
 
   - `gb` lists, creates, renames, and deletes branches.
@@ -47,24 +85,50 @@ Aliases
   - `gbm` renames a branch.
   - `gbM` renames a branch even if the new branch name already exists.
 
+------
+gb='branch'
+gbc='checkout -b'
+gbl='branch -v'
+gbL='branch -av'
+gbx='branch -d'
+gbX='branch -D'
+gbm='branch -m'
+gbM='branch -M'
+gbs='show-branch'
+gbS='show-branch -a'
 
 ### Commit
 
   - `gc` records changes to the repository.
-  - `gca` stages all modified and deleted files.
+  - `gca` stages all modified and deleted files. stage所有更改删除的文件,跳出见面输入commit信息
   - `gcm` records changes to the repository with the given message.
   - `gco` checks out a branch or paths to work tree.
   - `gcO` checks out hunks from the index or the tree interactively.
   - `gcf` amends the tip of the current branch using the same log message as
     *HEAD*.
   - `gcF` amends the tip of the current branch.
-  - `gcp` applies changes introduced by existing commits.
+  - `gcp` applies changes introduced by existing commits. 选中某次提交,应用到当前工作目录
   - `gcP` applies changes introduced by existing commits without committing.
   - `gcr` reverts existing commits by reverting patches and recording new
      commits.
-  - `gcR` removes the *HEAD* commit.
+  - `gcR` removes the *HEAD* commit.取消上次的提交,提交内容回到unstage状态,并且如果抛弃输入命令时的unstage文件
   - `gcs` displays various types of objects.
   - `gcl` lists lost commits.
+
+------
+gc='git commit --verbose'
+gca='git commit --verbose --all'
+gcm='git commit --message'
+gco='git checkout'
+gcO='git checkout --patch'
+gcf='git commit --amend --reuse-message HEAD'
+gcF='git commit --verbose --amend'
+gcp='git cherry-pick --ff'
+gcP='git cherry-pick --no-commit'
+gcr='git revert'
+gcR='git reset "HEAD^"'
+gcs='git show'
+gcl='git-commit-lost'
 
 ### Conflict
 
@@ -75,6 +139,13 @@ Aliases
   - `gCO` checks out our changes for all unmerged paths.
   - `gCt` checks out their changes for unmerged paths.
   - `gCT` checks out their changes for all unmerged paths.
+gCl='git status | sed -n "s/^.*both [a-z]*ed: *//p"'
+gCa='git add $(gCl)'
+gCe='git mergetool $(gCl)'
+gCo='git checkout --ours --'
+gCO='gCo $(gCl)'
+gCt='git checkout --theirs --'
+gCT='gCt $(gCl)'
 
 ### Data
 
@@ -85,6 +156,13 @@ Aliases
   - `gdu` lists untracked files.
   - `gdk` lists killed files.
   - `gdi` lists ignored files.
+gd='git ls-files'
+gdc='git ls-files --cached'
+gdx='git ls-files --deleted'
+gdm='git ls-files --modified'
+gdu='git ls-files --other --exclude-standard'
+gdk='git ls-files --killed'
+gdi='git status --porcelain --short --ignored | sed -n "s/^!! //p"'
 
 ### Fetch
 
@@ -92,6 +170,10 @@ Aliases
   - `gfc` clones a repository into a new directory.
   - `gfm` fetches from and merges with another repository or local branch.
   - `gfr` fetches from and rebases on another repository or local branch.
+gf='git fetch'
+gfc='git clone'
+gfm='git pull'
+gfr='git pull --rebase'
 
 ### Grep
 
@@ -113,6 +195,15 @@ Aliases
   - `giR` resets the current index interactively.
   - `gix` removes files/directories from the index (recursively).
   - `giX` removes files/directories from the index (recursively and forced).
+gia='git add'
+giA='git add --patch'
+giu='git add --update'
+gid='git diff --no-ext-diff --cached'
+giD='git diff --no-ext-diff --cached --word-diff'
+gir='git reset'
+giR='git reset --patch'
+gix='git rm -r --cached'
+giX='git rm -rf --cached'
 
 ### Log
 
@@ -123,6 +214,13 @@ Aliases
   - `glg` displays the graph log.
   - `glb` displays the brief commit log.
   - `glc` displays the commit count for each contributor in descending order.
+ gl='git log --topo-order --pretty=format:"${_git_log_medium_format}"'
+ gls='git log --topo-order --stat --pretty=format:"${_git_log_medium_format}"'
+ gld='git log --topo-order --stat --patch --full-diff --pretty=format:"${_git_log_medium_format}"'
+ glo='git log --topo-order --pretty=format:"${_git_log_oneline_format}"'
+ glg='git log --topo-order --all --graph --pretty=format:"${_git_log_oneline_format}"'
+ glb='git log --topo-order --pretty=format:"${_git_log_brief_format}"'
+ glc='git shortlog --summary --numbered'
 
 ### Merge
 
@@ -132,6 +230,11 @@ Aliases
      generating a merge commit even if the merge resolved as a fast-forward.
   - `gma` aborts the conflict resolution, and reconstructs the pre-merge state.
   - `gmt` runs the merge conflict resolution tools to resolve conflicts.
+gm='git merge'
+gmC='git merge --no-commit'
+gmF='git merge --no-ff'
+gma='git merge --abort'
+gmt='git mergetool'
 
 ### Push
 
@@ -143,6 +246,13 @@ Aliases
   - `gpc` updates remote refs along with associated objects and adds *origin*
      as an upstream reference for the current branch.
   - `gpp` pulls and pushes from origin to origin.
+gp='git push'
+gpf='git push --force'
+gpa='git push --all'
+gpA='git push --all && git push --tags'
+gpt='git push --tags'
+gpc='git push --set-upstream origin "$(git-branch-current 2> /dev/null)"'
+gpp='git pull origin "$(git-branch-current 2> /dev/null)" && git push origin "$(git-branch-current 2> /dev/null)"'
 
 ### Rebase
 
