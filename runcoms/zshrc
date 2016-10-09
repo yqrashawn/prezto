@@ -105,7 +105,6 @@ alias gffd='git flow feature diff'
 alias gffr='git flow feature rebase'
 alias gffc='git flow feature checkout'
 alias gffd='git flow feature delete'
-
 alias gfb='git flow  bugfix'
 alias gfbs='git flow bugfix start'
 alias gfbf='git flow bugfix finish'
@@ -115,7 +114,6 @@ alias gfbd='git flow bugfix diff'
 alias gfbr='git flow bugfix rebase'
 alias gfbc='git flow bugfix pull'
 alias gfbd='git flow bugfix delete'
-alias gs='git status'
 
 #别名设置举例
 export PATH="/usr/local/sbin:$PATH"
