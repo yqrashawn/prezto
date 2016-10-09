@@ -126,6 +126,7 @@ alias gpt='git push --tags'
 alias gpc='git push --set-upstream origin "$(git-branch-current 2> /dev/null)"'
 alias gsu='git push --set-upstream-to='
 alias gpp='git pull origin "$(git-branch-current 2> /dev/null)" && git push origin "$(git-branch-current 2> /dev/null)"'
+alias gppp='git pull && git push'
 
 # Rebase (r)
 alias gr='git rebase'
