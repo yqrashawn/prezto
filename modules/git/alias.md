@@ -30,6 +30,7 @@ zstyle -s ':prezto:module:git:status:ignore' submodules '_git_status_ignore_subm
 alias g='git'
 
 # Branch (b)
+# git branch
 gb='git branch'
 gbc='git checkout -b'
 gbl='git branch -v'
@@ -81,8 +82,10 @@ alias gdk='git ls-files --killed'
 alias gdi='git status --porcelain --short --ignored | sed -n "s/^!! //p"'
 
 # Fetch (f)
+# git fetch
 alias gf='git fetch'
 alias gfc='git clone'
+# git pull
 alias gfm='git pull'
 alias gfr='git pull --rebase'
 
@@ -95,7 +98,9 @@ alias ggv='git grep --invert-match'
 alias ggw='git grep --word-regexp'
 
 # Index (i)
+# git add
 alias gia='git add'
+# git add 有交互
 alias giA='git add --patch'
 alias giu='git add --update'
 alias gid='git diff --no-ext-diff --cached'
@@ -115,6 +120,7 @@ alias glb='git log --topo-order --pretty=format:"${_git_log_brief_format}"'
 alias glc='git shortlog --summary --numbered'
 
 # Merge (m)
+# git merge
 alias gm='git merge'
 alias gmC='git merge --no-commit'
 alias gmF='git merge --no-ff'
@@ -122,6 +128,7 @@ alias gma='git merge --abort'
 alias gmt='git mergetool'
 
 # Push (p)
+# git push
 alias gp='git push'
 alias gpf='git push --force'
 alias gpa='git push --all'
@@ -150,6 +157,7 @@ alias gRs='git remote show'
 alias gRb='git-hub-browse'
 
 # Stash (s)
+# git stash
 alias gs='git stash'
 alias gsa='git stash apply'
 alias gsx='git stash drop'
@@ -157,6 +165,7 @@ alias gsX='git-stash-clear-interactive'
 alias gsl='git stash list'
 alias gsL='git-stash-dropped'
 alias gsd='git stash show --patch --stat'
+# git stash pop
 alias gsp='git stash pop'
 alias gsr='git-stash-recover'
 alias gss='git stash save --include-untracked'
@@ -176,7 +185,9 @@ alias gSu='git submodule foreach git pull origin master'
 alias gSx='git-submodule-remove'
 
 # Working Copy (w)
+# 显示文件状态 short
 alias gws='git status --ignore-submodules=${_git_status_ignore_submodules} --short'
+# 显示文件状态
 alias gwS='git status --ignore-submodules=${_git_status_ignore_submodules}'
 alias gwd='git diff --no-ext-diff'
 alias gwD='git diff --no-ext-diff --word-diff'
