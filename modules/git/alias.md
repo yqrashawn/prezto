@@ -43,11 +43,17 @@ gbS='git show-branch -a'
 
 # Commit (c)
 alias gc='git commit --verbose'
+# 提交所有被track的文件的改动, 包括工作区和暂存区, 调用编辑器显示更改的内容, 并输入提交信息
 alias gca='git commit --verbose --all'
+# 提交暂存区内容, 直接在命令中输入提交信息
 alias gcm='git commit --message'
 alias gco='git checkout'
+# 抛弃上次commit之前的更改, 有二次确认
 alias gcO='git checkout --patch'
+# 当前 指定文件修改合并到上次commit中
 alias gcf='git commit --amend --reuse-message HEAD'
+# 当前修改合并到上次commit
+alias gcff='git commit --amend --reuse-message HEAD --all'
 alias gcF='git commit --verbose --amend'
 alias gcp='git cherry-pick --ff'
 alias gcP='git cherry-pick --no-commit'
@@ -122,6 +128,7 @@ alias gpa='git push --all'
 alias gpA='git push --all && git push --tags'
 alias gpt='git push --tags'
 alias gpc='git push --set-upstream origin "$(git-branch-current 2> /dev/null)"'
+# 先pull再push
 alias gpp='git pull origin "$(git-branch-current 2> /dev/null)" && git push origin "$(git-branch-current 2> /dev/null)"'
 
 # Rebase (r)
