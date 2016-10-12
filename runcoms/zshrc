@@ -320,3 +320,5 @@ vinfo() {
             [ -f "${line/\~/$HOME}" ] && echo "$line"
           done | fzf-tmux -d -m -q "$*" -1) && vim ${files//\~/$HOME}
 }
+
+export PATH="$HOME/.yarn/bin:$PATH"
