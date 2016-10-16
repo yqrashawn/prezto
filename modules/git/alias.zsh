@@ -155,7 +155,7 @@ alias gRb='git-hub-browse'
 # Stash (s)
 alias gs='git stash'
 alias gsa='git stash apply'
-alias gsq='git squash HEAD~'
+alias gsq='git squash'
 alias gsx='git stash drop'
 alias gsX='git-stash-clear-interactive'
 alias gsl='git stash list'
