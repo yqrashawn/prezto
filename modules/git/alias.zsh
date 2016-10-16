@@ -25,6 +25,7 @@ zstyle -s ':prezto:module:git:status:ignore' submodules '_git_status_ignore_subm
 #
 # Aliases
 #
+alias galias='nvim ~/.zprezto/modules/git/alias.zsh'
 
 # Git
 alias g='git'
@@ -154,7 +155,7 @@ alias gRb='git-hub-browse'
 # Stash (s)
 alias gs='git stash'
 alias gsa='git stash apply'
-alias gsq='git squash'
+alias gsq='git squash HEAD~'
 alias gsx='git stash drop'
 alias gsX='git-stash-clear-interactive'
 alias gsl='git stash list'
@@ -176,6 +177,7 @@ alias gSl='git submodule status'
 alias gSm='git-submodule-move'
 alias gSs='git submodule sync'
 alias gSu='git submodule foreach git pull origin master'
+alias gSru='git submodule foreach --recursive git pull origin master'
 alias gSx='git-submodule-remove'
 
 # Working Copy (w)
