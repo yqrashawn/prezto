@@ -28,12 +28,14 @@ zstyle -s ':prezto:module:git:status:ignore' submodules '_git_status_ignore_subm
 
 # Git
 alias g='git'
+alias G='gits'
 
 # Branch (b)
 alias gb='git branch'
 alias gbc='git checkout -b'
 alias gbl='git branch -v'
 alias gbL='git branch -av'
+alias gbv='git branch -vv'
 alias gbx='git branch -d'
 alias gbX='git branch -D'
 alias gbm='git branch -m'
@@ -47,7 +49,8 @@ alias gca='git commit --all'
 alias gcaa='git commit --verbose --all'
 alias gcm='git commit --message'
 alias gco='git checkout'
-alias gcO='git checkout --patch'
+# alias gcO='git checkout --patch'
+alias gcO='git checkout .'
 alias gcf='git commit --amend --reuse-message HEAD'
 alias gcff='git commit --amend --reuse-message HEAD --all'
 alias gcF='git commit --verbose --amend'
@@ -80,6 +83,7 @@ alias gdi='git status --porcelain --short --ignored | sed -n "s/^!! //p"'
 alias gf='git fetch'
 alias gfc='git clone'
 alias gfm='git pull'
+alias ggfm='gits pull'
 alias gfr='git pull --rebase'
 
 # Grep (g)
@@ -119,6 +123,7 @@ alias gmt='git mergetool'
 
 # Push (p)
 alias gp='git push'
+alias ggp='gits push'
 alias gpf='git push --force'
 alias gpa='git push --all'
 alias gpA='git push --all && git push --tags'
@@ -174,6 +179,7 @@ alias gSu='git submodule foreach git pull origin master'
 alias gSx='git-submodule-remove'
 
 # Working Copy (w)
+alias ggws='gits status'
 alias gws='git status --ignore-submodules=${_git_status_ignore_submodules} --short'
 alias gwS='git status --ignore-submodules=${_git_status_ignore_submodules}'
 alias gwd='git diff --no-ext-diff'
