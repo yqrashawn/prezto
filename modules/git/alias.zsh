@@ -25,6 +25,7 @@ zstyle -s ':prezto:module:git:status:ignore' submodules '_git_status_ignore_subm
 #
 # Aliases
 #
+alias galias='nvim ~/.zprezto/modules/git/alias.zsh'
 
 # Git
 alias g='git'
@@ -178,6 +179,7 @@ alias gSm='git-submodule-move'
 # alias gSs='git submodule sync'
 alias gSu='git submodule foreach git pull origin master'
 alias gSs='git submodule update --remote --recursive'
+alias gSru='git submodule foreach --recursive git pull origin master'
 alias gSx='git-submodule-remove'
 alias gSp='git submodule foreach --recursive "git push origin HEAD:master"'
 
