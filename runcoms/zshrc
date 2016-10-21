@@ -324,3 +324,4 @@ vinfo() {
 }
 
 export PATH="$HOME/.yarn/bin:$PATH"
+source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"
