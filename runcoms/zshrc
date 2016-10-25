@@ -76,9 +76,9 @@ alias c='fasd_cd -i'
 alias finalz='p http://www.douyutv.com/D3D3D3'
 alias vimconfig='nvim /Users/Rashawn/.config/nvim/init.vim'
 alias ariaconfig='nvim /Users/Rashawn/.aria2/aria2.conf'
-alias ttmux='tmuxinator start gissdk'
+alias ttmux='tmuxinator start projects'
 alias tmuxconfig='nvim ~/.tmux.conf'
-alias tmux='tmux -3'
+# alias tmux='tmux -3'
 #alias j='z'
 #alias jj='zz'
 alias tls='tmux ls'
@@ -325,3 +325,9 @@ vinfo() {
 
 export PATH="$HOME/.yarn/bin:$PATH"
 source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"
+#neoterm
+if [ -n "${NVIM_LISTEN_ADDRESS+x}" ]; then
+  alias nh='nvr -o'
+  alias nv='nvr -O'
+  alias t='nvr --remote-tab'
+fi
