@@ -25,15 +25,18 @@ zstyle -s ':prezto:module:git:status:ignore' submodules '_git_status_ignore_subm
 #
 # Aliases
 #
+alias galias='nvim ~/.zprezto/modules/git/alias.zsh'
 
 # Git
 alias g='git'
+alias G='gits'
 
 # Branch (b)
 alias gb='git branch'
 alias gbc='git checkout -b'
 alias gbl='git branch -v'
 alias gbL='git branch -av'
+alias gbv='git branch -vv'
 alias gbx='git branch -d'
 alias gbX='git branch -D'
 alias gbm='git branch -m'
@@ -42,12 +45,15 @@ alias gbs='git show-branch'
 alias gbS='git show-branch -a'
 
 # Commit (c)
-alias gc='git commit --verbose'
-alias gca='git commit --verbose --all'
+alias gc='git commit --all -m'
+alias gca='git commit --all'
+alias gcaa='git commit --verbose --all'
 alias gcm='git commit --message'
 alias gco='git checkout'
-alias gcO='git checkout --patch'
+# alias gcO='git checkout --patch'
+alias gcO='git checkout .'
 alias gcf='git commit --amend --reuse-message HEAD'
+alias gcff='git commit --amend --reuse-message HEAD --all'
 alias gcF='git commit --verbose --amend'
 alias gcp='git cherry-pick --ff'
 alias gcP='git cherry-pick --no-commit'
@@ -78,6 +84,7 @@ alias gdi='git status --porcelain --short --ignored | sed -n "s/^!! //p"'
 alias gf='git fetch'
 alias gfc='git clone'
 alias gfm='git pull'
+alias ggfm='gits pull'
 alias gfr='git pull --rebase'
 
 # Grep (g)
@@ -117,12 +124,15 @@ alias gmt='git mergetool'
 
 # Push (p)
 alias gp='git push'
+alias ggp='gits push'
 alias gpf='git push --force'
 alias gpa='git push --all'
 alias gpA='git push --all && git push --tags'
 alias gpt='git push --tags'
 alias gpc='git push --set-upstream origin "$(git-branch-current 2> /dev/null)"'
+alias gsu='git push --set-upstream-to='
 alias gpp='git pull origin "$(git-branch-current 2> /dev/null)" && git push origin "$(git-branch-current 2> /dev/null)"'
+alias gppp='git pull && git push'
 
 # Rebase (r)
 alias gr='git rebase'
@@ -145,6 +155,7 @@ alias gRb='git-hub-browse'
 # Stash (s)
 alias gs='git stash'
 alias gsa='git stash apply'
+alias gsq='git squash'
 alias gsx='git stash drop'
 alias gsX='git-stash-clear-interactive'
 alias gsl='git stash list'
@@ -163,12 +174,17 @@ alias gSf='git submodule foreach'
 alias gSi='git submodule init'
 alias gSI='git submodule update --init --recursive'
 alias gSl='git submodule status'
+alias gSS='git submodule summary'
 alias gSm='git-submodule-move'
-alias gSs='git submodule sync'
+# alias gSs='git submodule sync'
 alias gSu='git submodule foreach git pull origin master'
+alias gSs='git submodule update --remote --recursive'
+alias gSru='git submodule foreach --recursive git pull origin master'
 alias gSx='git-submodule-remove'
+alias gSp='git submodule foreach --recursive "git push origin HEAD:master"'
 
 # Working Copy (w)
+alias ggws='gits status'
 alias gws='git status --ignore-submodules=${_git_status_ignore_submodules} --short'
 alias gwS='git status --ignore-submodules=${_git_status_ignore_submodules}'
 alias gwd='git diff --no-ext-diff'
