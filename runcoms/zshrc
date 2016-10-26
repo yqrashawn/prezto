@@ -21,7 +21,7 @@ PROJECT_PATHS=(~/workspace ~/workspace/projects ~/workspace/XiheMap ~/workspace/
 autoload -U compinit && compinit
 
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 
 # Preferred editor for local and remote sessions
@@ -58,34 +58,29 @@ alias cl='clear'
 alias o='open'
 alias lst='ls -t'
 
-alias karaconfig='nvim /Users/Rashawn/Library/Application\ Support/Karabiner/private.xml'
+alias karaconfig='nvim /home/yqrashawn/Library/Application\ Support/Karabiner/private.xml'
 alias proxyconfig='nvim /usr/local/etc/privoxy/config'
 alias grep='grep -r'
 alias ackl='ack -l'
 alias sss='proxychains4'
 alias rrm='rm *.*~ && rm .*~'
 alias l='ls -l -A'
-alias pproxy='proxychains4'
 alias v.='v .'
 alias v='nvim'
 alias p='you-get -p mpv '
 alias vv='fasd -f -e nvim'
 alias c='fasd_cd -i'
 alias finalz='p http://www.douyutv.com/D3D3D3'
-alias vimconfig='nvim /Users/Rashawn/.config/nvim/init.vim'
-alias ariaconfig='nvim /Users/Rashawn/.aria2/aria2.conf'
+alias vimconfig='nvim /home/yqrashawn/.config/nvim/init.vim'
+alias ariaconfig='nvim /home/yqrashawn/.aria2/aria2.conf'
 alias ttmux='tmuxinator start projects'
 alias tmuxconfig='nvim ~/.tmux.conf'
-# alias tmux='tmux -3'
-#alias j='z'
-#alias jj='zz'
 alias tls='tmux ls'
 alias surconfig='nvim ~/.surge.conf'
 alias cyper='p http://www.douyutv.com/576190'
 alias server='http-server'
 alias serverp='http-server -p'
 alias iss='instantmusic -s '
-alias xm='python2 ~/Downloads/xiami/xiami-night.py'
 alias findh='mdfind -onlyin . '
 alias gitshadow="git config --global http.proxy 'socks5://127.0.0.1:1080' \
     git config --global https.proxy 'socks5://127.0.0.1:1080'"
@@ -94,7 +89,6 @@ alias gitunshadow="git config --global --unset http.proxy \
 alias banwa='ssh root@45.78.62.230 -p 26812'
 alias mongodd='mongod -dbpath ~/workspace/projects/mongodb/data'
 alias ss='export https_proxy=http://127.0.0.1:6152;export http_proxy=http://127.0.0.1:6152 & '
-eval "$(thefuck --alias)"
 
 alias gff='git flow feature'
 alias gffs='git flow feature start'
@@ -116,7 +110,7 @@ alias gfbc='git flow bugfix pull'
 alias gfbd='git flow bugfix delete'
 
 #别名设置举例
-export PATH="/usr/local/sbin:$PATH"
+# export PATH="/usr/local/sbin:$PATH"
 #export PATH="$HOME/.node/bin:$PATH"
 #export PATH="$HOME/.npm-packages/bin:$PATH"
 
@@ -138,7 +132,7 @@ _fzf_compgen_path() {
 it2prof() { echo -e "\033]50;SetProfile=$1\a" }
 
 # Use ~~ as the trigger sequence instead of the default **
-export FZF_COMPLETION_TRIGGER='ii'
+export FZF_COMPLETION_TRIGGER='jj'
 
 # Options to fzf command
 export FZF_COMPLETION_OPTS='+c -x'
