@@ -53,6 +53,7 @@ export VISUAL=$EDITOR
 # alias vimdiff='nvim -d'
 alias v2ex='v2ex-go'
 
+alias k="k -h"
 alias zc="emacsclient ~/.zshrc"
 alias zcc="emacsclient ~/.zprezto/runcoms/zpreztorc"
 alias ggit='o ~/.zprezto/modules/git/README.md'
@@ -69,11 +70,13 @@ alias rrm='rm *.*~ && rm .*~'
 alias l='ls -l -A'
 alias pproxy='proxychains4'
 alias v.='v .'
-alias e='emacsclient -n'
+alias e='emacsclient'
 alias v='nvim'
 alias p='you-get -p mpv '
+alias mmpv='mpv -vo=opengl '
 alias vv='fasd -f -e nvim'
 alias ee='fasd -f -e emacsclient'
+alias t='emacsclient -t'
 alias vvv='vimr'
 alias vvvv='fasd -f -e vimr'
 alias c='fasd_cd -i'
@@ -154,6 +157,7 @@ _fzf_compgen_path() {
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source ~/.zprezto/modules/k/k.sh
 
 
 ###-begin-npm-completion-###
