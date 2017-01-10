@@ -27,9 +27,9 @@ autoload -U compinit && compinit
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='emacsclient -t'
+  export EDITOR='emacsclient'
 else
-  export EDITOR='emacsclient -t'
+  export EDITOR='emacsclient'
 fi
 
 # make sure that if a program wants you to edit
@@ -52,15 +52,15 @@ export VISUAL=$EDITOR
 # alias vimdiff='nvim -d'
 alias v2ex='v2ex-go'
 
-alias zc="emacsclient -t ~/.zshrc"
-alias zcc="emacsclient -t ~/.zprezto/runcoms/zpreztorc"
+alias zc="emacsclient ~/.zshrc"
+alias zcc="emacsclient ~/.zprezto/runcoms/zpreztorc"
 alias ggit='o ~/.zprezto/modules/git/README.md'
 alias cl='clear'
 alias o='open'
 alias lst='ls -t'
 
-alias karaconfig='emacsclient -t /Users/Rashawn/Library/Application\ Support/Karabiner/private.xml'
-alias proxyconfig='emacsclient -t /usr/local/etc/privoxy/config'
+alias karaconfig='emacsclient /Users/Rashawn/Library/Application\ Support/Karabiner/private.xml'
+alias proxyconfig='emacsclient /usr/local/etc/privoxy/config'
 alias grep='grep -r'
 alias ackl='ack -l'
 alias sss='proxychains4'
@@ -87,7 +87,7 @@ alias tmuxconfig='emacsclient -t ~/.tmux.conf'
 #alias j='z'
 #alias jj='zz'
 alias tls='tmux ls'
-alias surconfig='emacsclient -t ~/.surge.conf'
+alias surconfig='emacsclient ~/.surge.conf'
 alias server='http-server'
 alias serverp='http-server -p'
 alias iss='instantmusic -s '
