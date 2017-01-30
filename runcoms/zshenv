@@ -10,17 +10,19 @@ if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
-export PATH="/Users/Rashawn/bin:/usr/local/bin:/Users/Rashawn/local/bin:/Users/Rashawn/.npm-packages/bin:/Users/Rashawn/.yarn/bin:/usr/local/sbin:/Users/Rashawn/bin:/usr/local/bin:/Users/Rashawn/local/bin:/Users/Rashawn/.npm-packages/bin:/Users/Rashawn/.yarn/bin:/usr/local/sbin:/Users/Rashawn/bin:/usr/local/bin:/Users/Rashawn/local/bin:/Users/Rashawn/.npm-packages/bin:/Users/Rashawn/.yarn/bin:/usr/local/sbin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/Library/Frameworks/Python.framework/Versions/3.5/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/Rashawn/bin:/Users/Rashawn/local/bin:/Users/Rashawn/.npm-packages/bin:/Users/Rashawn/.yarn/bin:/usr/local/sbin:/Users/Rashawn/.rvm/bin:/Users/Rashawn/.fzf/bin:/Users/Rashawn/.rvm/bin:/Users/Rashawn/.rvm/bin:/Users/Rashawn/.rvm/bin:/Users/Rashawn/.go/bin:/usr/local/opt/go/libexec/bin"
+export PATH="/Users/Rashawn/bin:/usr/local/bin:/Users/Rashawn/local/bin:/Users/Rashawn/.npm-packages/bin:/Users/Rashawn/.yarn/bin:/usr/local/sbin:/Users/Rashawn/bin:/usr/local/bin:/Users/Rashawn/local/bin:/Users/Rashawn/.npm-packages/bin:/Users/Rashawn/.yarn/bin:/usr/local/sbin:/Users/Rashawn/bin:/usr/local/bin:/Users/Rashawn/local/bin:/Users/Rashawn/.npm-packages/bin:/Users/Rashawn/.yarn/bin:/usr/local/sbin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/Library/Frameworks/Python.framework/Versions/3.5/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/Rashawn/bin:/Users/Rashawn/local/bin:/Users/Rashawn/.npm-packages/bin:/Users/Rashawn/.yarn/bin:/usr/local/sbin:/Users/Rashawn/.rvm/bin:/Users/Rashawn/.fzf/bin:/Users/Rashawn/.rvm/bin:/Users/Rashawn/.rvm/bin:/Users/Rashawn/.rvm/bin:/Users/Rashawn/.go/bin/:/usr/local/opt/go/libexec/bin/"
+
 # export PATH="/usr/local/sbin:$PATH"
 # export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 # export PATH="$HOME/.yarn/bin:$PATH"
 # export PATH="$HOME/.npm-packages/bin:$PATH"
 # export PATH="$HOME/local/bin:$PATH"
-export GOPATH=/Users/Rashawn/go/
+export GOROOT=/usr/local/opt/go/libexec
+export GOBIN=$GOPATH/bin
+export GOPATH=/Users/Rashawn/.go/
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export SSH_KEY_PATH="~/.ssh/id_rsa"
-source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"
+#source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"
 export LC_ALL=en_US.UTF-8  
 export LANG=en_US.UTF-8
 export GOPATH=$HOME/.go
-export GOROOT=/usr/local/opt/go/libexec

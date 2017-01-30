@@ -28,9 +28,9 @@ autoload -U compinit && compinit
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nvim'
+  export EDITOR='emacsclient '
 else
-  export EDITOR='nvim'
+  export EDITOR='emacsclient '
 fi
 
 # make sure that if a program wants you to edit
@@ -54,15 +54,15 @@ export VISUAL=$EDITOR
 alias v2ex='v2ex-go'
 
 alias k="k -h"
-alias zc="emacsclient ~/.zshrc"
-alias zcc="emacsclient ~/.zprezto/runcoms/zpreztorc"
+alias zc="emacsclient  ~/.zshrc"
+alias zcc="emacsclient  ~/.zprezto/runcoms/zpreztorc"
 alias ggit='o ~/.zprezto/modules/git/README.md'
 alias cl='clear'
 alias o='open'
 alias lst='ls -t'
 
-alias karaconfig='emacsclient /Users/Rashawn/Library/Application\ Support/Karabiner/private.xml'
-alias proxyconfig='emacsclient /usr/local/etc/privoxy/config'
+alias karaconfig='emacsclient  /Users/Rashawn/Library/Application\ Support/Karabiner/private.xml'
+alias proxyconfig='emacsclient  /usr/local/etc/privoxy/config'
 alias grep='grep -r'
 alias ackl='ack -l'
 alias sss='proxychains4'
@@ -70,25 +70,26 @@ alias rrm='rm *.*~ && rm .*~'
 alias l='ls -l -A'
 alias pproxy='proxychains4'
 alias v.='v .'
-alias e='emacsclient'
+alias e='emacsclient '
 alias v='nvim'
 alias p='you-get -p mpv '
 alias mmpv='mpv -vo=opengl '
 alias vv='fasd -f -e nvim'
-alias ee='fasd -f -e emacsclient'
+alias ee='fasd -f -e emacsclient '
 alias t='emacsclient -t'
 alias vvv='vimr'
+alias m='mvim'
 alias vvvv='fasd -f -e vimr'
 alias c='fasd_cd -i'
 alias vimconfig='nvim /Users/Rashawn/.config/nvim/init.vim'
-alias ariaconfig='emacsclient /Users/Rashawn/.aria2/aria2.conf'
+alias ariaconfig='emacsclient  /Users/Rashawn/.aria2/aria2.conf'
 alias ttmux='tmuxinator start projects'
-alias tmuxconfig='emacsclient ~/.tmux.conf'
+alias tmuxconfig='emacsclient  ~/.tmux.conf'
 # alias tmux='tmux -3'
 #alias j='z'
 #alias jj='zz'
 alias tls='tmux ls'
-alias surconfig='emacsclient ~/.surge.conf'
+alias surconfig='emacsclient  ~/.surge.conf'
 alias server='http-server'
 alias serverp='http-server -p'
 alias iss='instantmusic -s '
