@@ -9,7 +9,7 @@
 if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
-source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"
+# source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"
 
 # export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/Rashawn/bin:/Users/Rashawn/local/bin:/Users/Rashawn/.npm-packages/bin:/Users/Rashawn/.yarn/bin:/Users/Rashawn/.fzf/bin:/Users/Rashawn/.rvm/bin"
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/Rashawn/bin:/Users/Rashawn/local/bin:/Users/Rashawn/.npm-packages/bin:/Users/Rashawn/.yarn/bin:/Users/Rashawn/.fzf/bin"
