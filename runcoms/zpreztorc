@@ -179,4 +179,4 @@ zstyle ':prezto:module:node:info:version' format 'version:%v'
 
 # Integrate with iTerm2.
 zstyle ':prezto:module:tmux:iterm' integrate 'yes'
-zstyle ':prezto:load' pmodule 'environment' 'terminal' 'archive' 'autosuggestions' 'command-not-found' 'completion' 'directory' 'editor' 'fasd' 'git' 'helper' 'history'  'homebrew' 'docker' 'node' 'osx' 'prompt' 'python' 'rsync' 'ssh' 'syntax-highlighting' 'tmux' 'history-substring-search'
+zstyle ':prezto:load' pmodule 'environment' 'terminal' 'archive' 'autosuggestions' 'command-not-found' 'completion' 'directory' 'editor' 'fasd' 'git' 'helper' 'history'  'homebrew' 'node' 'osx' 'prompt' 'python' 'rsync' 'ssh' 'syntax-highlighting' 'tmux' 'history-substring-search'
