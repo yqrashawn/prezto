@@ -1,6 +1,7 @@
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+  source "${ZDOTDIR:-$HOME}/.zprezto/modules/docker/docker.zsh"
 fi
 
 #upload file to transfer.sh
@@ -32,9 +33,9 @@ autoload -U compinit && compinit
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='emacsclient '
+  export EDITOR='emacsclient'
 else
-  export EDITOR='emacsclient '
+  export EDITOR='emacsclient'
 fi
 
 # make sure that if a program wants you to edit
@@ -44,11 +45,11 @@ export VISUAL=$EDITOR
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
-	  colorflag="--color"
-	  export LS_COLORS='no=00:fi=00:di=01;31:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.ogg=01;35:*.mp3=01;35:*.wav=01;35:'
+    colorflag="--color"
+    export LS_COLORS='no=00:fi=00:di=01;31:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.ogg=01;35:*.mp3=01;35:*.wav=01;35:'
 else # macOS `ls`
-	  colorflag="-G"
-	  export LSCOLORS='BxBxhxDxfxhxhxhxhxcxcx'
+    colorflag="-G"
+    export LSCOLORS='BxBxhxDxfxhxhxhxhxcxcx'
 fi
 
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
@@ -63,7 +64,7 @@ alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v exten
 
 # One of @janmoesen’s ProTip™s
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
-	  alias "$method"="lwp-request -m '$method'"
+    alias "$method"="lwp-request -m '$method'"
 done
 
 # Ring the terminal bell, and put a badge on Terminal.app’s Dock icon
@@ -146,6 +147,7 @@ alias tls='tmux ls'
 alias surconfig='emacsclient  ~/.surge.conf'
 alias server='http-server'
 alias serverp='http-server -p'
+alias serv="live-server --browser='Google Chrome'"
 alias iss='instantmusic -s '
 alias xm='python2 ~/Downloads/xiami/xiami-night.py'
 alias findh='mdfind -onlyin . '
@@ -153,7 +155,6 @@ alias gitshadow="git config --global http.proxy 'socks5://127.0.0.1:1080' \
   git config --global https.proxy 'socks5://127.0.0.1:1080'"
 alias gitunshadow="git config --global --unset http.proxy \
   git config -'global --unset https.proxy"
-alias banwa='ssh root@45.78.62.230 -p 26812'
 alias mongodd='mongod -dbpath ~/workspace/projects/mongodb/data'
 alias ss='export https_proxy=http://127.0.0.1:6152;export http_proxy=http://127.0.0.1:6152 & '
 eval "$(thefuck --alias)"
