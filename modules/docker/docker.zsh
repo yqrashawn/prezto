@@ -39,8 +39,8 @@
 #
 
 # Short-option stacking can be enabled with:
-#  zstyle ':completion:*:*:docker:*' option-stacking yes
-#  zstyle ':completion:*:*:docker-*:*' option-stacking yes
+ zstyle ':completion:*:*:docker:*' option-stacking yes
+ zstyle ':completion:*:*:docker-*:*' option-stacking yes
 __docker_arguments() {
     if zstyle -t ":completion:${curcontext}:" option-stacking; then
         print -- -s
