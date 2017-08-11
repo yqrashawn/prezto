@@ -110,6 +110,8 @@ command -v md5sum > /dev/null || alias md5sum="md5"
 command -v sha1sum > /dev/null || alias sha1sum="shasum"
 # alias vimdiff='nvim -d'
 
+alias rg="rg --smart-case --no-heading"
+alias rgu="rg -uu --smart-case --no-heading"
 alias k="k -h"
 alias zc="emacsclient ~/.zshrc"
 alias zcc="emacsclient ~/.zprezto/runcoms/zpreztorc"
