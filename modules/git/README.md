@@ -15,120 +15,73 @@ The format of the [git-log][8] output is configurable via the following style,
 where context is *brief*, *oneline*, and *medium*, which will be passed to the
 `--pretty=format:` switch.
 
-    zstyle ':prezto:module:git:log:context' format ''
+```sh
+zstyle ':prezto:module:git:log:context' format ''
+```
 
 ### Status
 
 Retrieving the status of a repository with submodules can take a long time.
 Submodules may be ignored when they are *dirty*, *untracked*, *all*, or *none*.
 
-    zstyle ':prezto:module:git:status:ignore' submodules 'all'
+```sh
+zstyle ':prezto:module:git:status:ignore' submodules 'all'
+```
 
 This setting affects all aliases and functions that call `git-status`.
 
 Aliases
 -------
 
+Aliases are enabled by default. You can disable them with:
+
+```sh
+zstyle ':prezto:module:git:alias' skip 'yes'
+```
+
 ### Git
 
   - `g` is short for `git`.
-
-  - `gbl` lists branches and their commits.
-  - `gbL` lists local and remote branches and their commits.
-  - `gbx` deletes a branch.
-  - `gbX` deletes a branch irrespective of its merged status.
-  - `gca` stages all modified and deleted files. stage所有更改删除的文件,跳出见面输入commit信息
-  - `gcO` git checkout --patch 直接使用就是 discard local storage, 但是需要手动确认,可以对指定文件使用,加文件路径即可
-  - `gcf` 使用时后面跟文件路径,把修改的文件补交到上一次的commit中
-  - `gcF` 使用与上面相同,但是可以修改commit message
-  - `gcs` 查看上次commit的信息
-#### 下面四个是merge的时候选择自己的还是别人的
-  - `gCo` checks out our changes for unmerged paths.
-  - `gCO` checks out our changes for all unmerged paths.
-  - `gCt` checks out their changes for unmerged paths.
-  - `gCT` checks out their changes for all unmerged paths.
-  - `gCl` lists unmerged files. 用于查看使用nvim合并哪些文件
-#### 方便查看几个状态的文件
-  - `gdi` lists ignored files.
-  - `gdx` lists deleted files.
-  - `gdm` lists modified files.
-#### git fetch clone merge
-  - `gf` downloads objects and references from another repository.
-  - `gfc` clones a repository into a new directory.
-  - `gfm` fetches from and merges with another repository or local branch.
-#### 把文件暂存 使用gca更方便一点
-  - `gia` adds file contents to the index.加入文件
-  - `giA` adds file contents to the index interactively.交互的加入文件,可以选择文件的hunks
-  - `giu` adds file contents to the index (updates only known files).加入所有track的文件的修改
-  - `glg` 显示树状 branch log
-#### merge 用gmF比较好, merge 到一半出错重来用 gma abort
-  - `gm` joins two or more development histories together.
-  - `gmC` joins two or more development histories together but does not commit.
-  - `gmF` joins two or more development histories together but does not commit
-     generating a merge commit even if the merge resolved as a fast-forward.
-  - `gma` aborts the conflict resolution, and reconstructs the pre-merge state.
-  - `gsu` git push --set-upstream-to=用来设置远程对应的branch
-  - `gp` git push
-  - `gws` displays working-tree status in the short format.
 
 ### Branch
 
   - `gb` lists, creates, renames, and deletes branches.
   - `gbc` creates a new branch.
-  - `gbl` lists branches and their commits.
-  - `gbL` lists local and remote branches and their commits.
+  - `gbl` lists branches and their commits. (also `gbv`)
+  - `gbL` lists all local and remote branches and their commits.
+  - `gbr` renames a branch. (also `gbm`)
+  - `gbR` renames a branch even if the new branch name already exists. (also
+    `gbM`)
   - `gbs` lists branches and their commits with ancestry graphs.
   - `gbS` lists local and remote branches and their commits with ancestry
     graphs.
-  - `gbx` deletes a branch.
-  - `gbX` deletes a branch irrespective of its merged status.
-  - `gbm` renames a branch.
-  - `gbM` renames a branch even if the new branch name already exists.
+  - `gbV` lists branches with more verbose information about their commits.
+  - `gbx` deletes a branch. (also `gbd`)
+  - `gbX` deletes a branch irrespective of its merged status. (also `gbD`)
 
-------
-gb='branch'
-gbc='checkout -b'
-gbl='branch -v'
-gbL='branch -av'
-gbx='branch -d'
-gbX='branch -D'
-gbm='branch -m'
-gbM='branch -M'
-gbs='show-branch'
-gbS='show-branch -a'
 
 ### Commit
 
   - `gc` records changes to the repository.
-  - `gca` stages all modified and deleted files. stage所有更改删除的文件,跳出见面输入commit信息
+  - `gca` stages all modified and deleted files.
   - `gcm` records changes to the repository with the given message.
+  - `gcS` records changes to the repository. (Signed)
+  - `gcSa` stages all modified and deleted files. (Signed)
+  - `gcSm` records changes to the repository with the given message. (Signed)  - `gco`  checks out a branch or paths to work tree.
+  - `gcam` stages all modified and deleted files, and records changes to the repository with the given message.
   - `gco` checks out a branch or paths to work tree.
   - `gcO` checks out hunks from the index or the tree interactively.
-  - `gcf` amends the tip of the current branch using the same log message as
-    *HEAD*.
+  - `gcf` amends the tip of the current branch using the same log message as *HEAD*.
+  - `gcSf` amends the tip of the current branch using the same log message as *HEAD*. (Signed)
   - `gcF` amends the tip of the current branch.
-  - `gcp` applies changes introduced by existing commits. 选中某次提交,应用到当前工作目录
+  - `gcSF` amends the tip of the current branch. (Signed)
+  - `gcp` applies changes introduced by existing commits.
   - `gcP` applies changes introduced by existing commits without committing.
   - `gcr` reverts existing commits by reverting patches and recording new
      commits.
-  - `gcR` removes the *HEAD* commit.取消上次的提交,提交内容回到unstage状态,并且如果抛弃输入命令时的unstage文件
+  - `gcR` removes the *HEAD* commit.
   - `gcs` displays various types of objects.
   - `gcl` lists lost commits.
-
-------
-gc='git commit --verbose'
-gca='git commit --verbose --all'
-gcm='git commit --message'
-gco='git checkout'
-gcO='git checkout --patch'
-gcf='git commit --amend --reuse-message HEAD'
-gcF='git commit --verbose --amend'
-gcp='git cherry-pick --ff'
-gcP='git cherry-pick --no-commit'
-gcr='git revert'
-gcR='git reset "HEAD^"'
-gcs='git show'
-gcl='git-commit-lost'
 
 ### Conflict
 
@@ -139,13 +92,6 @@ gcl='git-commit-lost'
   - `gCO` checks out our changes for all unmerged paths.
   - `gCt` checks out their changes for unmerged paths.
   - `gCT` checks out their changes for all unmerged paths.
-gCl='git status | sed -n "s/^.*both [a-z]*ed: *//p"'
-gCa='git add $(gCl)'
-gCe='git mergetool $(gCl)'
-gCo='git checkout --ours --'
-gCO='gCo $(gCl)'
-gCt='git checkout --theirs --'
-gCT='gCt $(gCl)'
 
 ### Data
 
@@ -156,24 +102,89 @@ gCT='gCt $(gCl)'
   - `gdu` lists untracked files.
   - `gdk` lists killed files.
   - `gdi` lists ignored files.
-gd='git ls-files'
-gdc='git ls-files --cached'
-gdx='git ls-files --deleted'
-gdm='git ls-files --modified'
-gdu='git ls-files --other --exclude-standard'
-gdk='git ls-files --killed'
-gdi='git status --porcelain --short --ignored | sed -n "s/^!! //p"'
 
 ### Fetch
 
   - `gf` downloads objects and references from another repository.
+  - `gfa` downloads objects and references from all remote repositories.
   - `gfc` clones a repository into a new directory.
+  - `gfcr` clones a repository into a new directory including all submodules.
   - `gfm` fetches from and merges with another repository or local branch.
   - `gfr` fetches from and rebases on another repository or local branch.
-gf='git fetch'
-gfc='git clone'
-gfm='git pull'
-gfr='git pull --rebase'
+
+### Flow
+
+  - `gFi` is short for `git flow init`
+
+#### Feature
+
+  - `gFf` is short for `git flow feature`
+  - `gFfl` is short for `git flow feature list`
+  - `gFfs` is short for `git flow feature start`
+  - `gFff` is short for `git flow feature finish`
+  - `gFfp` is short for `git flow feature publish`
+  - `gFft` is short for `git flow feature track`
+  - `gFfd` is short for `git flow feature diff`
+  - `gFfr` is short for `git flow feature rebase`
+  - `gFfc` is short for `git flow feature checkout`
+  - `gFfm` is short for `git flow feature pull`
+  - `gFfx` is short for `git flow feature delete`
+
+#### Bugfix
+
+  - `gFb` is short for `git flow bugfix`
+  - `gFbl` is short for `git flow bugfix list`
+  - `gFbs` is short for `git flow bugfix start`
+  - `gFbf` is short for `git flow bugfix finish`
+  - `gFbp` is short for `git flow bugfix publish`
+  - `gFbt` is short for `git flow bugfix track`
+  - `gFbd` is short for `git flow bugfix diff`
+  - `gFbr` is short for `git flow bugfix rebase`
+  - `gFbc` is short for `git flow bugfix checkout`
+  - `gFbm` is short for `git flow bugfix pull`
+  - `gFbx` is short for `git flow bugfix delete`
+
+#### Release
+
+  - `gFl` is short for `git flow release`
+  - `gFll` is short for `git flow release list`
+  - `gFls` is short for `git flow release start`
+  - `gFlf` is short for `git flow release finish`
+  - `gFlp` is short for `git flow release publish`
+  - `gFlt` is short for `git flow release track`
+  - `gFld` is short for `git flow release diff`
+  - `gFlr` is short for `git flow release rebase`
+  - `gFlc` is short for `git flow release checkout`
+  - `gFlm` is short for `git flow release pull`
+  - `gFlx` is short for `git flow release delete`
+
+#### Hotfix
+
+  - `gFh` is short for `git flow hotfix`
+  - `gFhl` is short for `git flow hotfix list`
+  - `gFhs` is short for `git flow hotfix start`
+  - `gFhf` is short for `git flow hotfix finish`
+  - `gFhp` is short for `git flow hotfix publish`
+  - `gFht` is short for `git flow hotfix track`
+  - `gFhd` is short for `git flow hotfix diff`
+  - `gFhr` is short for `git flow hotfix rebase`
+  - `gFhc` is short for `git flow hotfix checkout`
+  - `gFhm` is short for `git flow hotfix pull`
+  - `gFhx` is short for `git flow hotfix delete`
+
+#### Support
+
+  - `gFs` is short for `git flow support`
+  - `gFsl` is short for `git flow support list`
+  - `gFss` is short for `git flow support start`
+  - `gFsf` is short for `git flow support finish`
+  - `gFsp` is short for `git flow support publish`
+  - `gFst` is short for `git flow support track`
+  - `gFsd` is short for `git flow support diff`
+  - `gFsr` is short for `git flow support rebase`
+  - `gFsc` is short for `git flow support checkout`
+  - `gFsm` is short for `git flow support pull`
+  - `gFsx` is short for `git flow support delete`
 
 ### Grep
 
@@ -191,19 +202,12 @@ gfr='git pull --rebase'
   - `giu` adds file contents to the index (updates only known files).
   - `gid` displays changes between the index and a named commit (diff).
   - `giD` displays changes between the index and a named commit (word diff).
+  - `gii` temporarily ignore differences in a given file.
+  - `giI` unignore differences in a given file.
   - `gir` resets the current HEAD to the specified state.
   - `giR` resets the current index interactively.
   - `gix` removes files/directories from the index (recursively).
   - `giX` removes files/directories from the index (recursively and forced).
-gia='git add'
-giA='git add --patch'
-giu='git add --update'
-gid='git diff --no-ext-diff --cached'
-giD='git diff --no-ext-diff --cached --word-diff'
-gir='git reset'
-giR='git reset --patch'
-gix='git rm -r --cached'
-giX='git rm -rf --cached'
 
 ### Log
 
@@ -214,13 +218,6 @@ giX='git rm -rf --cached'
   - `glg` displays the graph log.
   - `glb` displays the brief commit log.
   - `glc` displays the commit count for each contributor in descending order.
- gl='git log --topo-order --pretty=format:"${_git_log_medium_format}"'
- gls='git log --topo-order --stat --pretty=format:"${_git_log_medium_format}"'
- gld='git log --topo-order --stat --patch --full-diff --pretty=format:"${_git_log_medium_format}"'
- glo='git log --topo-order --pretty=format:"${_git_log_oneline_format}"'
- glg='git log --topo-order --all --graph --pretty=format:"${_git_log_oneline_format}"'
- glb='git log --topo-order --pretty=format:"${_git_log_brief_format}"'
- glc='git shortlog --summary --numbered'
 
 ### Merge
 
@@ -230,11 +227,6 @@ giX='git rm -rf --cached'
      generating a merge commit even if the merge resolved as a fast-forward.
   - `gma` aborts the conflict resolution, and reconstructs the pre-merge state.
   - `gmt` runs the merge conflict resolution tools to resolve conflicts.
-gm='git merge'
-gmC='git merge --no-commit'
-gmF='git merge --no-ff'
-gma='git merge --abort'
-gmt='git mergetool'
 
 ### Push
 
@@ -246,13 +238,6 @@ gmt='git mergetool'
   - `gpc` updates remote refs along with associated objects and adds *origin*
      as an upstream reference for the current branch.
   - `gpp` pulls and pushes from origin to origin.
-gp='git push'
-gpf='git push --force'
-gpa='git push --all'
-gpA='git push --all && git push --tags'
-gpt='git push --tags'
-gpc='git push --set-upstream origin "$(git-branch-current 2> /dev/null)"'
-gpp='git pull origin "$(git-branch-current 2> /dev/null)" && git push origin "$(git-branch-current 2> /dev/null)"'
 
 ### Rebase
 
@@ -324,6 +309,7 @@ The following aliases may shadow system commands:
 
   - `gpt` shadows the [GUID partition table maintenance utility][4].
   - `gs` shadows the [Ghostscript][5].
+  - `gb` shadows the [GB][9].
 
 If you frequently use the above commands, you may wish to remove said aliases
 from this module or to disable them at the bottom of the zshrc with `unalias`.
@@ -338,7 +324,7 @@ Functions
   - `git-commit-lost` lists lost commits.
   - `git-dir` displays the path to the Git directory.
   - `git-hub-browse` opens the [GitHub][3] repository in the default browser.
-  - `git-hub-shorten-url` shortens GitHub URLs.
+  - `git-hub-shorten-url` shortens [GitHub URLs][10].
   - `git-info` exposes repository information via the `$git_info` associative
     array.
   - `git-root` displays the path to the working tree root.
@@ -355,7 +341,9 @@ To display information about the current repository in a prompt, define the
 following styles in the `prompt_name_setup` function, where the syntax for
 setting a style is as follows.
 
-    zstyle ':prezto:module:git:info:context:subcontext' format 'string'
+```sh
+zstyle ':prezto:module:git:info:context:subcontext' format 'string'
+```
 
 ### Main Contexts
 
@@ -382,7 +370,9 @@ setting a style is as follows.
 
 The following contexts must be enabled with the following zstyle:
 
-    zstyle ':prezto:module:git:info' verbose 'yes'
+```sh
+zstyle ':prezto:module:git:info' verbose 'yes'
+```
 
 ### Verbose Contexts
 
@@ -409,18 +399,24 @@ The following contexts must be enabled with the following zstyle:
 | rebase               |    value    | Rebasing
 | rebase-interactive   |    value    | Rebasing interactively
 | rebase-merge         |    value    | Rebasing merge
+| revert               |    value    | Reverting
+| revert-sequence      |    value    | Reverting sequence
 
 First, format the repository state attributes. For example, to format the branch
 and remote names, define the following styles.
 
-    zstyle ':prezto:module:git:info:branch' format 'branch:%b'
-    zstyle ':prezto:module:git:info:remote' format 'remote:%R'
+```sh
+zstyle ':prezto:module:git:info:branch' format 'branch:%b'
+zstyle ':prezto:module:git:info:remote' format 'remote:%R'
+```
 
 Second, format how the above attributes are displayed in prompts.
 
-    zstyle ':prezto:module:git:info:keys' format \
-      'prompt'  ' git(%b)' \
-      'rprompt' '[%R]'
+```sh
+zstyle ':prezto:module:git:info:keys' format \
+  'prompt'  ' git(%b)' \
+  'rprompt' '[%R]'
+```
 
 Last, add `$git_info[prompt]` to `$PROMPT` and `$git_info[rprompt]` to
 `$RPROMPT` respectively and call `git-info` in the `prompt_name_preexec` hook
@@ -442,3 +438,5 @@ Authors
 [6]: https://github.com/sorin-ionescu/prezto/issues
 [7]: https://github.com/sorin-ionescu/prezto/issues/219
 [8]: http://www.kernel.org/pub/software/scm/git/docs/git-log.html
+[9]: https://getgb.io/
+[10]: https://github.com/blog/985-git-io-github-url-shortener
