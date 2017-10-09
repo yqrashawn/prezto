@@ -38,9 +38,9 @@ autoload -U compinit && compinit
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='emacsclient'
+  export EDITOR='emacslcient'
 else
-  export EDITOR='emacsclient'
+  export EDITOR='emacslcient'
 fi
 
 # make sure that if a program wants you to edit
@@ -115,11 +115,13 @@ command -v md5sum > /dev/null || alias md5sum="md5"
 command -v sha1sum > /dev/null || alias sha1sum="shasum"
 # alias vimdiff='nvim -d'
 
+alias rg="rg --smart-case --no-heading"
+alias rgu="rg -uu --smart-case --no-heading"
 alias k="k -h"
-alias zc="emacsclient ~/.zshrc"
-alias zcc="emacsclient ~/.zprezto/runcoms/zpreztorc"
-alias karaconfig='emacsclient  /Users/Rashawn/Library/Application\ Support/Karabiner/private.xml'
-alias proxyconfig='emacsclient  /usr/local/etc/privoxy/config'
+alias zc="emacslcient ~/.zshrc"
+alias zcc="emacslcient ~/.zprezto/runcoms/zpreztorc"
+alias karaconfig='emacsclient /Users/Rashawn/Library/Application\ Support/Karabiner/private.xml'
+alias proxyconfig='emacsclient /usr/local/etc/privoxy/config'
 alias cl='clear'
 alias o='open'
 # alias n='sudo n'
@@ -130,13 +132,13 @@ alias ackl='ack -l'
 alias sss='proxychains4'
 alias pproxy='proxychains4'
 alias v.='v .'
-alias e='emacsclient '
+alias e='emacsclient'
 alias v='nvim'
 alias p='you-get -p mpv '
 alias mmpv='mpv -vo=opengl '
 alias vv='fasd -f -e nvim'
-alias ee='fasd -f -e emacsclient '
-alias t='emacsclient -nw -q'
+alias ee='fasd -f -e emacsclient'
+alias t='emacsclient -t'
 alias vvv='vimr'
 alias m='mvim'
 alias vvvv='fasd -f -e vimr'
