@@ -38,9 +38,9 @@ autoload -U compinit && compinit
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='emacslcient'
+  export EDITOR='emacsclient'
 else
-  export EDITOR='emacslcient'
+  export EDITOR='emacsclient'
 fi
 
 # make sure that if a program wants you to edit
@@ -118,8 +118,8 @@ command -v sha1sum > /dev/null || alias sha1sum="shasum"
 alias rg="rg --smart-case --no-heading"
 alias rgu="rg -uu --smart-case --no-heading"
 # alias k="k -h"
-alias zc="emacslcient ~/.zshrc"
-alias zcc="emacslcient ~/.zprezto/runcoms/zpreztorc"
+alias zc="emacsclient ~/.zshrc"
+alias zcc="emacsclient ~/.zprezto/runcoms/zpreztorc"
 alias karaconfig='emacsclient /Users/Rashawn/Library/Application\ Support/Karabiner/private.xml'
 alias proxyconfig='emacsclient /usr/local/etc/privoxy/config'
 alias cl='clear'
@@ -421,3 +421,6 @@ alias dyyf='mpv https://www.douyu.com/58428'
 alias dchuan='mpv https://www.douyu.com/chuan967'
 alias dxiao8='mpv https://www.douyu.com/xiao8'
 # alias d820='mpv '
+
+# zsh-bd
+. $HOME/.zprezto/modules/bd/bd.zsh
