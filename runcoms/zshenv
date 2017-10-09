@@ -24,3 +24,4 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export GOPATH=$HOME/golang
+export ROAMER_EDITOR=emacsclient

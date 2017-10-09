@@ -4,6 +4,11 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/modules/docker/docker.zsh"
 fi
 
+source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/history-timer.zsh"
+source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/sqlite-history.zsh"
+
+# command -v dtags-activate > /dev/null 2>&1 && eval "`dtags-activate zsh`"
+
 #upload file to transfer.sh
 ul (){
   curl --upload-file ./$1 https://transfer.sh/$1 | pbcopy
@@ -91,7 +96,7 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias sudo='sudo '
-alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
+# alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
@@ -117,7 +122,7 @@ alias karaconfig='emacsclient  /Users/Rashawn/Library/Application\ Support/Karab
 alias proxyconfig='emacsclient  /usr/local/etc/privoxy/config'
 alias cl='clear'
 alias o='open'
-alias n='sudo n'
+# alias n='sudo n'
 alias lst='ls -t'
 
 alias grep='grep -r'
@@ -125,13 +130,13 @@ alias ackl='ack -l'
 alias sss='proxychains4'
 alias pproxy='proxychains4'
 alias v.='v .'
-alias e='emacsclient -c'
+alias e='emacsclient '
 alias v='nvim'
 alias p='you-get -p mpv '
 alias mmpv='mpv -vo=opengl '
 alias vv='fasd -f -e nvim'
-alias ee='fasd -f -e emacsclient -c'
-alias t='emacsclient '
+alias ee='fasd -f -e emacsclient '
+alias t='emacsclient -nw -q'
 alias vvv='vimr'
 alias m='mvim'
 alias vvvv='fasd -f -e vimr'
@@ -148,6 +153,7 @@ alias surconfig='emacsclient  ~/.surge.conf'
 alias server='http-server'
 alias serverp='http-server -p'
 alias serv="live-server --browser='Google Chrome'"
+alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 alias iss='instantmusic -s '
 alias xm='python2 ~/Downloads/xiami/xiami-night.py'
 alias findh='mdfind -onlyin . '
