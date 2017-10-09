@@ -117,7 +117,7 @@ command -v sha1sum > /dev/null || alias sha1sum="shasum"
 
 alias rg="rg --smart-case --no-heading"
 alias rgu="rg -uu --smart-case --no-heading"
-alias k="k -h"
+# alias k="k -h"
 alias zc="emacslcient ~/.zshrc"
 alias zcc="emacslcient ~/.zprezto/runcoms/zpreztorc"
 alias karaconfig='emacsclient /Users/Rashawn/Library/Application\ Support/Karabiner/private.xml'
