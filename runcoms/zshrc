@@ -4,6 +4,12 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/modules/docker/docker.zsh"
 fi
 
+if [ -n "$INSIDE_EMACS" ]; then
+    chpwd() { print -P "\033AnSiTc %d" }
+    print -P "\033AnSiTu %n"
+    print -P "\033AnSiTc %d"
+fi
+
 #upload file to transfer.sh
 ul (){
   curl --upload-file ./$1 https://transfer.sh/$1 | pbcopy
@@ -149,7 +155,7 @@ alias tls='tmux ls'
 alias surconfig='emacsclient  ~/.surge.conf'
 alias server='http-server'
 alias serverp='http-server -p'
-alias serv="live-server --browser='Google Chrome'"
+alias serv="live-server --port=8081 --browser='Google Chrome'"
 alias iss='instantmusic -s '
 alias xm='python2 ~/Downloads/xiami/xiami-night.py'
 alias findh='mdfind -onlyin . '
