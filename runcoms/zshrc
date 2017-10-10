@@ -82,10 +82,13 @@ done
 # (useful when executing time-consuming commands)
 alias badge="tput bel"
 alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
-alias ls="ls -AlF ${colorflag}"
-alias l="ls -lF ${colorflag}"
-alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
-alias ls="command ls ${colorflag}"
+# alias ls="ls -AlF ${colorflag}"
+alias l='exa'
+alias ls="exa"
+alias lsa="exa -abghl --git --color=automatic"
+# alias l="ls -lF ${colorflag}"
+# alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
+alias lsd="exa -l --color=automatic | grep --color=never '^d'"
 
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
@@ -131,7 +134,8 @@ alias proxyconfig='emacsclient /usr/local/etc/privoxy/config'
 alias cl='clear'
 alias o='open'
 # alias n='sudo n'
-alias lst='ls -t'
+# alias lst='ls -t'
+alias lst='exa -t modified'
 
 alias grep='grep -r'
 alias ackl='ack -l'
