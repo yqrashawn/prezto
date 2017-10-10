@@ -430,3 +430,8 @@ zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
 # . /usr/local/etc/profile.d/z.sh
+
+export ENHANCD_FILTER=fzy
+export ENHANCD_DIR=~/.config/.enhancd
+export ENHANCD_DISABLE_HOME=1
+source "./.zprezto/modules/enhancd/init.sh"

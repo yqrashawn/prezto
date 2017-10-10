@@ -232,3 +232,4 @@ zstyle ':prezto:module:tmux:session' name 'yqrashawn'
 # before deleting or overwriting files. Set to 'no' to disable this safer
 # behavior.
 zstyle ':prezto:module:utility' safe-ops 'no'
+

@@ -28,3 +28,6 @@
 [submodule "modules/prompt/external/powerlevel9k"]
 	path = modules/prompt/external/powerlevel9k
 	url = https://github.com/bhilburn/powerlevel9k.git
+[submodule "modules/enhancd"]
+	path = modules/enhancd
+	url = https://github.com/b4b4r07/enhancd.git
