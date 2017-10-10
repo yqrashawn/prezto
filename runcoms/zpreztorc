@@ -33,9 +33,9 @@ zstyle ':prezto:load' pmodule \
   'docker' \
   'homebrew' \
   'osx' \
-  'fasd' \
   'node' \
   'ssh' \
+  'fasd' \
   'terminal' \
   'git' \
   'editor' \
@@ -43,7 +43,6 @@ zstyle ':prezto:load' pmodule \
   'directory' \
   'spectrum' \
   'utility' \
-  'completion' \
   'prompt'
 
 #
