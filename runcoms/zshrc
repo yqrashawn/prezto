@@ -9,6 +9,11 @@ if [ -n "$INSIDE_EMACS" ]; then
     print -P "\033AnSiTu %n"
     print -P "\033AnSiTc %d"
 fi
+source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/history-timer.zsh"
+source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/sqlite-history.zsh"
+
+# command -v dtags-activate > /dev/null 2>&1 && eval "`dtags-activate zsh`"
+>>>>>>> 2ad5e5955524554cde1d083a3b12d96241d0437f
 
 #upload file to transfer.sh
 ul (){
@@ -97,7 +102,7 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias sudo='sudo '
-alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
+# alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
@@ -118,14 +123,14 @@ command -v sha1sum > /dev/null || alias sha1sum="shasum"
 
 alias rg="rg --smart-case --no-heading"
 alias rgu="rg -uu --smart-case --no-heading"
-alias k="k -h"
+# alias k="k -h"
 alias zc="emacsclient ~/.zshrc"
 alias zcc="emacsclient ~/.zprezto/runcoms/zpreztorc"
-alias karaconfig='emacsclient  /Users/Rashawn/Library/Application\ Support/Karabiner/private.xml'
-alias proxyconfig='emacsclient  /usr/local/etc/privoxy/config'
+alias karaconfig='emacsclient /Users/Rashawn/Library/Application\ Support/Karabiner/private.xml'
+alias proxyconfig='emacsclient /usr/local/etc/privoxy/config'
 alias cl='clear'
 alias o='open'
-alias n='sudo n'
+# alias n='sudo n'
 alias lst='ls -t'
 
 alias grep='grep -r'
@@ -156,6 +161,7 @@ alias surconfig='emacsclient  ~/.surge.conf'
 alias server='http-server'
 alias serverp='http-server -p'
 alias serv="live-server --port=8081 --browser='Google Chrome'"
+alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 alias iss='instantmusic -s '
 alias xm='python2 ~/Downloads/xiami/xiami-night.py'
 alias findh='mdfind -onlyin . '
@@ -421,3 +427,16 @@ alias dyyf='mpv https://www.douyu.com/58428'
 alias dchuan='mpv https://www.douyu.com/chuan967'
 alias dxiao8='mpv https://www.douyu.com/xiao8'
 # alias d820='mpv '
+
+# zsh-bd
+. $HOME/.zprezto/modules/bd/bd.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Better history
+# Credits to https://coderwall.com/p/jpj_6q/zsh-better-history-searching-with-arrow-keys
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search # Up
+bindkey "^[[B" down-line-or-beginning-search # Down
