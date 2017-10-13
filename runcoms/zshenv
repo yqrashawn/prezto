@@ -10,7 +10,7 @@ if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; t
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
-export PATH="$HOME/bin:/usr/local/bin:$HOME/local/bin:$HOME/.npm-packages/bin:$HOME/.yarn/bin:/usr/local/sbin:$HOME/bin:/usr/local/bin:$HOME/local/bin:$HOME/.npm-packages/bin:$HOME/.yarn/bin:/usr/local/sbin:$HOME/bin:/usr/local/bin:$HOME/local/bin:$HOME/.npm-packages/bin:$HOME/.yarn/bin:/usr/local/sbin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/Library/Frameworks/Python.framework/Versions/3.5/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/bin:$HOME/local/bin:$HOME/.npm-packages/bin:$HOME/.yarn/bin:/usr/local/sbin:$HOME/.rvm/bin:$HOME/.fzf/bin:$HOME/.rvm/bin:$HOME/.rvm/bin:$HOME/.rvm/bin:$HOME/golang/bin/:/usr/local/opt/go/libexec/bin/:$HOME/local/bin/funcs:$HOME.fzf/bin"
+export PATH="/usr/local/opt/texinfo/bin:$HOME/bin:/usr/local/bin:$HOME/local/bin:$HOME/.npm-packages/bin:$HOME/.yarn/bin:/usr/local/sbin:$HOME/bin:/usr/local/bin:$HOME/local/bin:$HOME/.npm-packages/bin:$HOME/.yarn/bin:/usr/local/sbin:$HOME/bin:/usr/local/bin:$HOME/local/bin:$HOME/.npm-packages/bin:$HOME/.yarn/bin:/usr/local/sbin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/Library/Frameworks/Python.framework/Versions/3.5/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/bin:$HOME/local/bin:$HOME/.npm-packages/bin:$HOME/.yarn/bin:/usr/local/sbin:$HOME/.rvm/bin:$HOME/.fzf/bin:$HOME/.rvm/bin:$HOME/.rvm/bin:$HOME/.rvm/bin:$HOME/golang/bin/:/usr/local/opt/go/libexec/bin/:$HOME/local/bin/funcs:$HOME/.fzf/bin:$HOME/.cargo/env:$HOME/.cargo/bin"
 export YQ_MACHINE="macbook"
 
 # export PATH="/usr/local/sbin:$PATH"
