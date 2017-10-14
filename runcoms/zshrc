@@ -38,7 +38,7 @@ export NODE_REPL_MODE='sloppy';
 KEYTIMEOUT=1
 
 #for pj
-PROJECT_PATHS=(~/workspace ~/workspace/projects ~/workspace/XiheMap ~/workspace/gogs-webhook ~/workspace/projecs/cesium)
+# PROJECT_PATHS=(~/workspace ~/workspace/projects ~/workspace/XiheMap ~/workspace/gogs-webhook ~/workspace/projecs/cesium)
 autoload -U compinit && compinit
 
 # Preferred editor for local and remote sessions
