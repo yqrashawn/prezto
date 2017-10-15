@@ -169,6 +169,7 @@ alias server='http-server'
 alias serverp='http-server -p'
 alias serv="live-server --port=8081 --browser='Google Chrome'"
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
+alias chromed='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222'
 alias iss='instantmusic -s '
 alias xm='python2 ~/Downloads/xiami/xiami-night.py'
 alias findh='mdfind -onlyin . '
@@ -438,3 +439,4 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 # export ENHANCD_DIR=~/.config/.enhancd
 # export ENHANCD_DISABLE_HOME=1
 # source "./.zprezto/modules/enhancd/init.sh"
+source "${ZDOTDIR:-$HOME}/.zprezto/modules/gitsome/init.sh"
