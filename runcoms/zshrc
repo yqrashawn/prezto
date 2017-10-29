@@ -21,3 +21,5 @@ fi
 # make sure that if a program wants you to edit
 # text, that Emacs is going to be there for you
 export USE_EDITOR=$EDITOR
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

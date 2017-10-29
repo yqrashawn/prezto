@@ -31,6 +31,7 @@ if ! zstyle -t ':prezto:module:git:alias' skip 'yes'; then
   alias g='git'
 
   # Branch (b)
+  alias gbu='git branch --set-upstream-to'
   alias gb='git branch'
   alias gba='git branch --all --verbose'
   alias gbc='git checkout -b'
