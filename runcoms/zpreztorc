@@ -42,7 +42,6 @@ zstyle ':prezto:load' pmodule \
   'history' \
   'directory' \
   'spectrum' \
-  'utility' \
   'prompt'
 
 #
@@ -231,4 +230,4 @@ zstyle ':prezto:module:tmux:session' name 'yqrashawn'
 # Enabled safe options. This aliases cp, ln, mv and rm so that they prompt
 # before deleting or overwriting files. Set to 'no' to disable this safer
 # behavior.
-zstyle ':prezto:module:utility' safe-ops 'no'
+# zstyle ':prezto:module:utility' safe-ops 'no'
