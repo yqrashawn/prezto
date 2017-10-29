@@ -1,3 +1,4 @@
+# -*- mode: shell-script-*-
 #
 # Sets Prezto options.
 #
@@ -232,4 +233,6 @@ zstyle ':prezto:module:tmux:session' name 'yqrashawn'
 # behavior.
 # zstyle ':prezto:module:utility' safe-ops 'no'
 
-source ../modules/enhancd/init.sh
+ENHANCD_FILTER=fzy:fzf
+ENHANCD_HOOK_AFTER_CD=ls
+ENHANCD_COMMAND=c
