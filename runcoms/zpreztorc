@@ -67,7 +67,6 @@ if [ -n "$INSIDE_EMACS" ]; then
            'prompt'
 
 fi
->>>>>>> 1977f69c8a6dd57771e6c4e0667e7643eda483b2
 
 #
 # Autosuggestions
