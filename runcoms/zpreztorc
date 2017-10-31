@@ -28,27 +28,26 @@ zstyle ':prezto:*:*' color 'yes'
 
 if [ -n "$INSIDE_EMACS" ]; then
   zstyle ':prezto:load' pmodule \
-         'history-substring-search' \
          'environment' \
          'archive' \
          'syntax-highlighting' \
-         'autosuggestions' \
          'completion' \
          'docker' \
          'homebrew' \
          'osx' \
+         'history-substring-search' \
          'node' \
          'ssh' \
          'fasd' \
          'terminal' \
          'git' \
          'editor' \
+         'history' \
          'directory' \
          'spectrum' \
          'prompt'
   else
     zstyle ':prezto:load' pmodule \
-           'history-substring-search' \
            'environment' \
            'archive' \
            'syntax-highlighting' \
@@ -59,6 +58,7 @@ if [ -n "$INSIDE_EMACS" ]; then
            'osx' \
            'node' \
            'ssh' \
+           'history-substring-search' \
            'fasd' \
            'terminal' \
            'git' \
@@ -75,6 +75,7 @@ fi
 #
 
 # Set the query found color.
+zstyle ':prezto:module:autosuggestions' color 'yes'
 zstyle ':prezto:module:autosuggestions:color' found ''
 
 #
