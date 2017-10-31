@@ -24,32 +24,57 @@ zstyle ':prezto:*:*' color 'yes'
 
 # Set the Prezto modules to load (browse modules).
 # The order matters.
-zstyle ':prezto:load' pmodule \
-       'environment' \
-       'archive' \
-       'syntax-highlighting' \
-       'history-substring-search' \
-       'autosuggestions' \
-       'completion' \
-       'docker' \
-       'homebrew' \
-       'osx' \
-       'node' \
-       'ssh' \
-       'fasd' \
-       'terminal' \
-       'git' \
-       'editor' \
-       'history' \
-       'directory' \
-       'spectrum' \
-       'prompt'
+if [ -n "$INSIDE_EMACS" ]; then
+  zstyle ':prezto:load' pmodule \
+         'environment' \
+         'archive' \
+         'syntax-highlighting' \
+         'completion' \
+         'docker' \
+         'homebrew' \
+         'osx' \
+         'history-substring-search' \
+         'node' \
+         'ssh' \
+         'fasd' \
+         'terminal' \
+         'git' \
+         'editor' \
+         'history' \
+         'directory' \
+         'spectrum' \
+         'prompt'
+  else
+    zstyle ':prezto:load' pmodule \
+           'environment' \
+           'archive' \
+           'syntax-highlighting' \
+           'autosuggestions' \
+           'completion' \
+           'docker' \
+           'homebrew' \
+           'osx' \
+           'node' \
+           'ssh' \
+           'history-substring-search' \
+           'fasd' \
+           'terminal' \
+           'git' \
+           'editor' \
+           'history' \
+           'directory' \
+           'spectrum' \
+           'prompt'
+
+fi
+>>>>>>> 1977f69c8a6dd57771e6c4e0667e7643eda483b2
 
 #
 # Autosuggestions
 #
 
 # Set the query found color.
+zstyle ':prezto:module:autosuggestions' color 'yes'
 zstyle ':prezto:module:autosuggestions:color' found ''
 
 #

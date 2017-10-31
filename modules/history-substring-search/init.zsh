@@ -59,6 +59,6 @@ if [[ -n "$key_info" ]]; then
 fi
 
 # OPTION 2: for iTerm2 running on Apple MacBook laptops
-zmodload zsh/terminfo
-bindkey "$terminfo[cuu1]" history-substring-search-up
-bindkey "$terminfo[cud1]" history-substring-search-down
+# zmodload zsh/terminfo
+# bindkey "$terminfo[cuu1]" history-substring-search-up
+# bindkey "$terminfo[cud1]" history-substring-search-down
