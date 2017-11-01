@@ -24,8 +24,6 @@ zstyle ':prezto:*:*' color 'yes'
 
 # Set the Prezto modules to load (browse modules).
 # The order matters.
-
-
 if [ -n "$INSIDE_EMACS" ]; then
   zstyle ':prezto:load' pmodule \
          'environment' \
@@ -84,7 +82,7 @@ zstyle ':prezto:module:autosuggestions:color' found ''
 
 # Set the entries to ignore in static */etc/hosts* for host completion.
 zstyle ':prezto:module:completion:*:hosts' etc-host-ignores \
-  '0.0.0.0' '127.0.0.1'
+       '0.0.0.0' '127.0.0.1'
 
 #
 # Editor
@@ -201,22 +199,22 @@ zstyle ':prezto:module:ssh:load' identities 'id_rsa' 'id_rsa2' 'id_github'
 # Set syntax highlighters.
 # By default, only the main highlighter is enabled.
 zstyle ':prezto:module:syntax-highlighting' highlighters \
-  'main' \
-  'brackets' \
-  'pattern' \
-  'line' \
-  'cursor' \
-  'root'
+       'main' \
+       'brackets' \
+       'pattern' \
+       'line' \
+       'cursor' \
+       'root'
 #
 # Set syntax highlighting styles.
 zstyle ':prezto:module:syntax-highlighting' styles \
-  'builtin' 'bg=blue' \
-  'command' 'bg=blue' \
-  'function' 'bg=blue'
+       'builtin' 'fg=green' \
+       'command' 'fg=green' \
+       'function' 'fg=firebrick'
 #
 # Set syntax pattern styles.
 zstyle ':prezto:module:syntax-highlighting' pattern \
-  'rm*-rf*' 'fg=white,bold,bg=red'
+       'rm*-rf*' 'fg=white,bold,bg=red'
 
 #
 # Terminal
@@ -258,7 +256,3 @@ zstyle ':prezto:module:tmux:session' name 'yqrashawn'
 # before deleting or overwriting files. Set to 'no' to disable this safer
 # behavior.
 # zstyle ':prezto:module:utility' safe-ops 'no'
-
-ENHANCD_FILTER=fzy:fzf
-ENHANCD_HOOK_AFTER_CD=ls
-ENHANCD_COMMAND=c
