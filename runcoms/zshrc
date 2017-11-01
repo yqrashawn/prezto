@@ -25,3 +25,15 @@ export EDITOR='emacsclient'
 export USE_EDITOR=$EDITOR
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# pro cd function
+jd() {
+  local projDir=$(pro search $1)
+  cd ${projDir}
+}
+
+# pro cd function
+jd() {
+  local projDir=$(pro search $1)
+  cd ${projDir}
+}
