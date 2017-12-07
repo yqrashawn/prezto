@@ -26,6 +26,7 @@ alias brewu='brew update && brew upgrade'
 alias brewx='brew remove'
 
 # Homebrew Cask
+alias caskua='brew cask list | xargs brew cask reinstall'
 alias cask='brew cask'
 alias caskh='brew cask home'
 alias caskc='brew cask cleanup --outdated'
