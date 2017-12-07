@@ -42,8 +42,7 @@ if [ -n "$INSIDE_EMACS" ]; then
          'editor' \
          'history' \
          'directory' \
-         'spectrum' \
-         'prompt'
+         'spectrum'
   else
     zstyle ':prezto:load' pmodule \
            'environment' \
@@ -63,9 +62,7 @@ if [ -n "$INSIDE_EMACS" ]; then
            'editor' \
            'history' \
            'directory' \
-           'spectrum' \
-           'prompt'
-
+           'spectrum'
 fi
 
 #
