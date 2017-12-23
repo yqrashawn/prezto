@@ -31,3 +31,4 @@ export PYENV_ROOT="$HOME/.pyenv"
 export EMAIL="namy.19@gmail.com"
 export RUST_SRC_PATH="$HOME/rust/src"
 export HOMEBREW_BUILD_FROM_SOURCE=true
+export XDG_CONFIG_HOME="$HOME/.config/"
