@@ -14,7 +14,7 @@ fi
 export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk/"
 export ANDROID_HOME="$HOME/Library/Android/sdk/"
 
-export PATH="$HOME/.config/yarn/global/node_modules/.bin/:/usr/local/opt/curl/bin:/usr/local/opt/texinfo/bin:$HOME/bin:/usr/local/bin:$HOME/local/bin:$HOME/.npm-packages/bin:$HOME/.yarn/bin:/usr/local/sbin:$HOME/bin:/usr/local/bin:$HOME/local/bin:$HOME/.npm-packages/bin:$HOME/.yarn/bin:/usr/local/sbin:$HOME/bin:/usr/local/bin:$HOME/local/bin:$HOME/.npm-packages/bin:$HOME/.yarn/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/bin:$HOME/local/bin:$HOME/.npm-packages/bin:$HOME/.yarn/bin:/usr/local/sbin:$HOME/.rvm/bin:$HOME/.fzf/bin:$HOME/.rvm/bin:$HOME/.rvm/bin:$HOME/.rvm/bin:$HOME/golang/bin/:/usr/local/opt/go/libexec/bin/:$HOME/local/bin/funcs:$HOME/.fzf/bin:$HOME/.cargo/env:$HOME/.cargo/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:/usr/local/anaconda3/bin"
+export PATH="$HOME/.config/yarn/global/node_modules/.bin/:/usr/local/opt/curl/bin:/usr/local/opt/texinfo/bin:$HOME/bin:/usr/local/bin:$HOME/local/bin:$HOME/.npm-packages/bin:$HOME/.yarn/bin:/usr/local/sbin:$HOME/bin:/usr/local/bin:$HOME/local/bin:$HOME/.npm-packages/bin:$HOME/.yarn/bin:/usr/local/sbin:$HOME/bin:/usr/local/bin:$HOME/local/bin:$HOME/.npm-packages/bin:$HOME/.yarn/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/bin:$HOME/local/bin:$HOME/.npm-packages/bin:$HOME/.yarn/bin:/usr/local/sbin:$HOME/.rvm/bin:$HOME/.fzf/bin:$HOME/.rvm/bin:$HOME/.rvm/bin:$HOME/.rvm/bin:$HOME/golang/bin/:/usr/local/opt/go/libexec/bin/:$HOME/local/bin/funcs:$HOME/.fzf/bin:$HOME/.cargo/env:$HOME/.cargo/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:/usr/local/anaconda3/bin:/Applications/blender.app/Contents/MacOS"
 
 export YQ_MACHINE="macbook"
 export YQ_BLOG_DEV_MODE="false"
@@ -30,5 +30,6 @@ export ROAMER_EDITOR=emacsclient
 export PYENV_ROOT="$HOME/.pyenv"
 export EMAIL="namy.19@gmail.com"
 export RUST_SRC_PATH="$HOME/rust/src"
-export HOMEBREW_BUILD_FROM_SOURCE=true
+# export HOMEBREW_BUILD_FROM_SOURCE=true
+# export HOMEBREW_BUILD_FROM_SOURCE=false
 export XDG_CONFIG_HOME="$HOME/.config/"
