@@ -47,3 +47,6 @@ jd() {
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /Users/rashawnzhang/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/rashawnzhang/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh
+
+# https://github.com/syl20bnr/spacemacs/wiki/Terminal
+export TERM=xterm-24bit
