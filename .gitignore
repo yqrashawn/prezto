@@ -3,3 +3,4 @@
 modules/*/cache.zsh
 .*.swp
 .DS_Store
+contrib

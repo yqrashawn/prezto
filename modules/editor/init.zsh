@@ -14,8 +14,7 @@ fi
 # Options
 #
 
-# Beep on error in line editor.
-setopt BEEP
+setopt BEEP                     # Beep on error in line editor.
 
 #
 # Variables
@@ -117,20 +116,21 @@ function editor-info {
 }
 zle -N editor-info
 
-# Reset the prompt based on the current context and
-# the ps-context option.
+# Reset the prompt based on the current context and whether the prompt utilizes
+# the editor:info zstyle. If the prompt does utilize the editor:info, we must
+# reset the prompt, otherwise the change in the prompt will never update. If the
+# prompt does not utilize the editor:info, we simply redisplay the command line.
 function zle-reset-prompt {
-  if zstyle -t ':prezto:module:editor' ps-context; then
+  # Explicitly check to see if there is an editor info keymap set that would
+  # require a reset of the prompt
+  if zstyle -L ':prezto:module:editor:info*' | grep -v 'completing' > /dev/null 2>&1; then
     # If we aren't within one of the specified contexts, then we want to reset
     # the prompt with the appropriate editor_info[keymap] if there is one.
     if [[ $CONTEXT != (select|cont) ]]; then
       zle reset-prompt
-      zle -R
     fi
-  else
-    zle reset-prompt
-    zle -R
   fi
+  zle -R
 }
 zle -N zle-reset-prompt
 
@@ -211,6 +211,14 @@ zle -N expand-dot-to-parent-directory-path
 function expand-or-complete-with-indicator {
   local indicator
   zstyle -s ':prezto:module:editor:info:completing' format 'indicator'
+
+  # This is included to work around a bug in zsh which shows up when interacting
+  # with multi-line prompts.
+  if [[ -z "$indicator" ]]; then
+    zle expand-or-complete
+    return
+  fi
+
   print -Pn "$indicator"
   zle expand-or-complete
   zle redisplay
@@ -225,6 +233,35 @@ function prepend-sudo {
   fi
 }
 zle -N prepend-sudo
+
+# Expand aliases
+function glob-alias {
+  zle _expand_alias
+  zle expand-word
+  zle magic-space
+}
+zle -N glob-alias
+
+# Toggle the comment character at the start of the line. This is meant to work
+# around a buggy implementation of pound-insert in zsh.
+#
+# This is currently only used for the emacs keys because vi-pound-insert has
+# been reported to work properly.
+function pound-toggle {
+  if [[ "$BUFFER" = '#'* ]]; then
+    # Because of an oddity in how zsh handles the cursor when the buffer size
+    # changes, we need to make this check before we modify the buffer and let
+    # zsh handle moving the cursor back if it's past the end of the line.
+    if [[ $CURSOR != $#BUFFER ]]; then
+      (( CURSOR -= 1 ))
+    fi
+    BUFFER="${BUFFER:1}"
+  else
+    BUFFER="#$BUFFER"
+    (( CURSOR += 1 ))
+  fi
+}
+zle -N pound-toggle
 
 # Reset to default key bindings.
 bindkey -d
@@ -261,6 +298,12 @@ if (( $+widgets[history-incremental-pattern-search-backward] )); then
     history-incremental-pattern-search-forward
 fi
 
+# Toggle comment at the start of the line. Note that we use pound-toggle which
+# is similar to pount insert, but meant to work around some issues that were
+# being seen in iTerm.
+bindkey -M emacs "$key_info[Escape];" pound-toggle
+
+
 #
 # Vi Key Bindings
 #
@@ -279,6 +322,9 @@ else
   bindkey -M vicmd "?" history-incremental-search-backward
   bindkey -M vicmd "/" history-incremental-search-forward
 fi
+
+# Toggle comment at the start of the line.
+bindkey -M vicmd "#" vi-pound-insert
 
 #
 # Emacs and Vi Key Bindings
@@ -314,18 +360,24 @@ for keymap in $unbound_keys; do
   bindkey -M viins "${keymap}" _prezto-zle-noop
   bindkey -M vicmd "${keymap}" _prezto-zle-noop
 done
-# Ctrl + Left and Ctrl + Right bindings to forward/backward word
+
+# Keybinds for all keymaps
+for keymap in 'emacs' 'viins' 'vicmd'; do
+  bindkey -M "$keymap" "$key_info[Home]" beginning-of-line
+  bindkey -M "$keymap" "$key_info[End]" end-of-line
+done
+
+# Keybinds for all vi keymaps
 for keymap in viins vicmd; do
+  # Ctrl + Left and Ctrl + Right bindings to forward/backward word
   for key in "${(s: :)key_info[ControlLeft]}"
     bindkey -M "$keymap" "$key" vi-backward-word
   for key in "${(s: :)key_info[ControlRight]}"
     bindkey -M "$keymap" "$key" vi-forward-word
 done
 
+# Keybinds for emacs and vi insert mode
 for keymap in 'emacs' 'viins'; do
-  bindkey -M "$keymap" "$key_info[Home]" beginning-of-line
-  bindkey -M "$keymap" "$key_info[End]" end-of-line
-
   bindkey -M "$keymap" "$key_info[Insert]" overwrite-mode
   bindkey -M "$keymap" "$key_info[Delete]" delete-char
   bindkey -M "$keymap" "$key_info[Backspace]" backward-delete-char
@@ -368,6 +420,9 @@ for keymap in 'emacs' 'viins'; do
 
   # Insert 'sudo ' at the beginning of the line.
   bindkey -M "$keymap" "$key_info[Control]X$key_info[Control]S" prepend-sudo
+
+  # control-space expands all aliases, including global
+  bindkey -M "$keymap" "$key_info[Control] " glob-alias
 done
 
 # Delete key deletes character in vimcmd cmd mode instead of weird default functionality
