@@ -10,6 +10,7 @@ source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/sqlite-history.zsh"
 source "${HOME}/.config/.zsh.d/.config.zsh"
 source "${HOME}/.config/.zsh.d/.keybind.zsh"
 source "${HOME}/.config/.zsh.d/.alias.zsh"
+source "${HOME}/.config/.zsh.d/.functions.zsh"
 source "${HOME}/.config/.zsh.d/.fzf.config.zsh"
 export RUST_SRC_PATH="$HOME/rust/src"
 
