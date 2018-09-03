@@ -28,3 +28,6 @@
 [submodule "modules/completion/external"]
 	path = modules/completion/external
 	url = https://yqrashawn@github.com/zsh-users/zsh-completions.git
+[submodule "zaw"]
+	path = modules/anything/zaw
+	url = https://github.com/zsh-users/zaw.git
