@@ -28,7 +28,6 @@ export USE_EDITOR=$EDITOR
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-source $HOME/workspace/THIRD/zaw/zaw.zsh
 
 # pro cd function
 jd() {
@@ -51,3 +50,5 @@ jd() {
 
 # https://github.com/syl20bnr/spacemacs/wiki/Terminal
 export TERM=xterm-24bit
+
+source $HOME/.zprezto/modules/anything/zaw/zaw.zsh
