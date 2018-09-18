@@ -38,3 +38,9 @@ alias caskl='brew cask list'
 alias casko='ss brew cask outdated'
 alias casks='ss brew cask search'
 alias caskx='brew cask uninstall'
+
+# Homebrew Services
+alias brewsl='brew services list'
+alias brewss='brew services start'
+alias brewsr='brew services restart'
+alias brewsx='brew services stop'
