@@ -11,6 +11,16 @@ if [[ "$OSTYPE" != (darwin|linux)* ]]; then
 fi
 
 #
+# Variables
+#
+
+# Load standard Homebrew shellenv into the shell session.
+# `brew shellenv` is relatively new, guard for legacy Homebrew.
+if (( $+commands[brew] )); then
+  eval "$(brew shellenv 2> /dev/null)"
+fi
+
+#
 # Aliases
 #
 
@@ -20,23 +30,23 @@ alias brewc='brew cleanup'
 alias brewC='brew cleanup --force'
 alias brewi='ss brew install'
 alias brewl='brew list'
-alias brewh='ss brew home'
-alias brewo='ss brew outdated'
-alias brews='ss brew search'
-alias brewu='ss brew update && brew upgrade'
+alias brewh='brew home'
+alias brewo='brew outdated'
+alias brews='brew search'
+alias brewu='brew update && brew upgrade'
 alias brewx='brew remove'
 
 # Homebrew Cask
 alias caskua='brew cask list | xargs brew cask reinstall'
 alias cask='brew cask'
-alias caskh='ss brew cask home'
+alias caskh='brew cask home'
 alias caskc='brew cask cleanup --outdated'
 alias caskC='brew cask cleanup'
-alias caski='ss brew cask install'
-alias caskr='ss brew cask reinstall'
+alias caski='brew cask install'
+alias caskr='brew cask reinstall'
 alias caskl='brew cask list'
-alias casko='ss brew cask outdated'
-alias casks='ss brew cask search'
+alias casko='brew cask outdated'
+alias casks='brew cask search'
 alias caskx='brew cask uninstall'
 
 # Homebrew Services
