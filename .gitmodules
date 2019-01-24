@@ -31,3 +31,6 @@
 [submodule "zaw"]
 	path = modules/anything/zaw
 	url = https://github.com/zsh-users/zaw.git
+[submodule "modules/wd"]
+	path = modules/wd
+	url = https://github.com/mfaerevaag/wd.git
