@@ -39,4 +39,4 @@ export https_proxy=http://127.0.0.1:6152
 export http_proxy=http://127.0.0.1:6152
 
 # auto init jenv
-eval "$(jenv init -)"
+which jenv > /dev/null && eval "$(jenv init -)"
