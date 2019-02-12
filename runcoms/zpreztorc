@@ -117,6 +117,12 @@ zstyle ':prezto:module:git:log:context' format ''
 # zstyle ':prezto:module:gnu-utility' prefix 'g'
 
 #
+# History
+#
+
+export SHARE_HISTORY=true
+
+#
 # History Substring Search
 #
 

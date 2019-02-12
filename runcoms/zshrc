@@ -14,13 +14,6 @@ then
     PS1='$ '
 fi
 
-# Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
-
-source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/history-timer.zsh"
-source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/sqlite-history.zsh"
 
 source "${HOME}/.config/.zsh.d/.config.zsh"
 source "${HOME}/.config/.zsh.d/.keybind.zsh"
@@ -53,4 +46,10 @@ jd() {
 # https://github.com/syl20bnr/spacemacs/wiki/Terminal
 export TERM=xterm-24bit
 
-source $HOME/.zprezto/modules/anything/zaw/zaw.zsh
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/history-timer.zsh"
+source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/sqlite-history.zsh"
