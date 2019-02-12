@@ -25,10 +25,9 @@ fi
 #
 
 # Homebrew
-alias brew='ss brew'
 alias brewc='brew cleanup'
 alias brewC='brew cleanup --force'
-alias brewi='ss brew install'
+alias brewi='brew install'
 alias brewl='brew list'
 alias brewh='brew home'
 alias brewo='brew outdated'
