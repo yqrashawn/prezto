@@ -35,8 +35,8 @@ export RUST_SRC_PATH="$HOME/rust/src"
 # export HOMEBREW_BUILD_FROM_SOURCE=true
 # export HOMEBREW_BUILD_FROM_SOURCE=false
 export XDG_CONFIG_HOME="$HOME/.config/"
-export https_proxy=http://127.0.0.1:6152
-export http_proxy=http://127.0.0.1:6152
+# export https_proxy=http://127.0.0.1:6152
+# export http_proxy=http://127.0.0.1:6152
 
 # auto init jenv
 which jenv > /dev/null && eval "$(jenv init -)"

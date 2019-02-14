@@ -66,4 +66,5 @@ jd() {
 # https://github.com/syl20bnr/spacemacs/wiki/Terminal
 export TERM=xterm-24bit
 
+source $HOME/Dropbox/sync/sync.zsh
 source $HOME/.zprezto/modules/anything/zaw/zaw.zsh

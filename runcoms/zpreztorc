@@ -28,25 +28,25 @@ zstyle ':prezto:*:*' color 'yes'
 # Set the Prezto modules to load (browse modules).
 # The order matters.
 if [ -n "$INSIDE_EMACS" ]; then
-  zstyle ':prezto:load' pmodule \
-         'environment' \
-         'archive' \
-         'syntax-highlighting' \
-         'completion' \
-         'docker' \
-         'homebrew' \
-         'osx' \
-         'history-substring-search' \
-         'node' \
-         'ssh' \
-         'fasd' \
-         'terminal' \
-         'git' \
-         'editor' \
-         'history' \
-         'directory' \
-         'spectrum'
-  else
+    zstyle ':prezto:load' pmodule \
+           'environment' \
+           'archive' \
+           'syntax-highlighting' \
+           'completion' \
+           'docker' \
+           'homebrew' \
+           'osx' \
+           'history-substring-search' \
+           'node' \
+           'ssh' \
+           'fasd' \
+           'terminal' \
+           'git' \
+           'editor' \
+           'history' \
+           'directory' \
+           'spectrum'
+else
     zstyle ':prezto:load' pmodule \
            'environment' \
            'archive' \
@@ -266,3 +266,7 @@ zstyle ':prezto:module:tmux:session' name 'yqrashawn'
 # before deleting or overwriting files. Set to 'no' to disable this safer
 # behavior.
 # zstyle ':prezto:module:utility' safe-ops 'no'
+
+w() {
+    . ~/.zprezto/modules/wd/wd.sh
+}
