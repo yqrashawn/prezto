@@ -34,13 +34,14 @@ export EDITOR='emacsclient'
 # text, that Emacs is going to be there for you
 export USE_EDITOR=$EDITOR
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-
 # pro cd function
 jd() {
   local projDir=$(pro search $1)
   cd ${projDir}
+}
+
+wd() {
+    . $HOME/.zprezto/modules/wd/wd.sh
 }
 
 # https://github.com/syl20bnr/spacemacs/wiki/Terminal
@@ -53,3 +54,6 @@ fi
 
 source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/history-timer.zsh"
 source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/sqlite-history.zsh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+alias d='cd ~/Downloads'
