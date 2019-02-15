@@ -47,6 +47,7 @@ wd() {
 # https://github.com/syl20bnr/spacemacs/wiki/Terminal
 export TERM=xterm-24bit
 
+source $HOME/Dropbox/sync/sync.zsh
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
