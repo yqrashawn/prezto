@@ -17,8 +17,12 @@ fi
 # Editors
 #
 
-export EDITOR='emacsclient'
-export VISUAL='emacsclient'
+# make sure that if a program wants you to edit
+# text, that Emacs is going to be there for you
+export EDITOR='/usr/local/bin/emacsclient'
+export VISUAL=$EDITOR
+export USE_EDITOR=$EDITOR
+export GIT_EDITOR=$EDITOR
 export PAGER='less'
 
 #
