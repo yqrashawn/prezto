@@ -53,3 +53,7 @@ source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/sqlite-history.zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 alias d='cd ~/Downloads'
+
+. $HOME/.asdf/asdf.sh
+
+. $HOME/.asdf/completions/asdf.bash
