@@ -57,3 +57,5 @@ alias d='cd ~/Downloads'
 . $HOME/.asdf/asdf.sh
 
 . $HOME/.asdf/completions/asdf.bash
+
+[ -s "/Users/Rashawn/.jabba/jabba.sh" ] && source "/Users/Rashawn/.jabba/jabba.sh"
