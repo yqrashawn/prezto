@@ -1,5 +1,4 @@
 # -*- mode: shell-script-*-
-
 if [[ "$TERM" == "dumb" ]]
 then
     unsetopt zle
@@ -13,7 +12,6 @@ then
     fi
     PS1='$ '
 fi
-
 
 source "${HOME}/.config/.zsh.d/.config.zsh"
 source "${HOME}/.config/.zsh.d/.keybind.zsh"
@@ -54,8 +52,4 @@ source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/sqlite-history.zsh"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 alias d='cd ~/Downloads'
 
-. $HOME/.asdf/asdf.sh
-
-. $HOME/.asdf/completions/asdf.bash
-
-[ -s "/Users/Rashawn/.jabba/jabba.sh" ] && source "/Users/Rashawn/.jabba/jabba.sh"
+[ -s "${HOME}/.jabba/jabba.sh" ] && source "${HOME}/.jabba/jabba.sh"
