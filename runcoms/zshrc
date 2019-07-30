@@ -41,10 +41,6 @@ wd() {
 export TERM=xterm-24bit
 
 source $HOME/Dropbox/sync/sync.zsh
-# Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
 
 source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/history-timer.zsh"
 source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/sqlite-history.zsh"
@@ -53,3 +49,8 @@ source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/sqlite-history.zsh"
 alias d='cd ~/Downloads'
 
 [ -s "${HOME}/.jabba/jabba.sh" ] && source "${HOME}/.jabba/jabba.sh"
+
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
