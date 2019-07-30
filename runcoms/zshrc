@@ -34,10 +34,6 @@ jd() {
   cd ${projDir}
 }
 
-wd() {
-    . $HOME/.zprezto/modules/wd/wd.sh
-}
-
 # https://github.com/syl20bnr/spacemacs/wiki/Terminal
 export TERM=xterm-24bit
 

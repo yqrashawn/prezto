@@ -48,7 +48,10 @@ if [ -n "$INSIDE_EMACS" ]; then
          'ssh' \
          'fasd' \
          'git' \
-         'wd'
+         'editor' \
+         'history' \
+         'directory' \
+         'spectrum'
   else
     zstyle ':prezto:load' pmodule \
            'environment' \
@@ -71,7 +74,10 @@ if [ -n "$INSIDE_EMACS" ]; then
            'ssh' \
            'fasd' \
            'git' \
-           'wd'
+           'editor' \
+           'history' \
+           'directory' \
+           'spectrum'
 fi
 
 #
@@ -264,7 +270,3 @@ zstyle ':prezto:module:syntax-highlighting' pattern \
 # before deleting or overwriting files. Set to 'no' to disable this safer
 # behavior.
 # zstyle ':prezto:module:utility' safe-ops 'no'
-
-w() {
-    . ~/.zprezto/modules/wd/wd.sh
-}
