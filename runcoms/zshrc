@@ -1,4 +1,5 @@
 # -*- mode: shell-script-*-
+
 if [[ "$TERM" == "dumb" ]]
 then
     unsetopt zle
@@ -45,7 +46,6 @@ source $HOME/Dropbox/sync/sync.zsh
 source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/history-timer.zsh"
 source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/sqlite-history.zsh"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 alias d='cd ~/Downloads'
 
 [ -s "${HOME}/.jabba/jabba.sh" ] && source "${HOME}/.jabba/jabba.sh"
@@ -54,3 +54,5 @@ alias d='cd ~/Downloads'
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

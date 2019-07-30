@@ -30,6 +30,13 @@ zstyle ':prezto:*:*' color 'yes'
 if [ -n "$INSIDE_EMACS" ]; then
   zstyle ':prezto:load' pmodule \
          'environment' \
+         'terminal' \
+         'editor' \
+         'history' \
+         'directory' \
+         'spectrum' \
+         'utility' \
+         'prompt' \
          'archive' \
          'syntax-highlighting' \
          'completion' \
@@ -40,16 +47,18 @@ if [ -n "$INSIDE_EMACS" ]; then
          'node' \
          'ssh' \
          'fasd' \
-         'terminal' \
          'git' \
-         'editor' \
-         'history' \
-         'directory' \
-         'wd' \
-         'spectrum'
+         'wd'
   else
     zstyle ':prezto:load' pmodule \
            'environment' \
+           'terminal' \
+           'editor' \
+           'history' \
+           'directory' \
+           'spectrum' \
+           'utility' \
+           'prompt' \
            'archive' \
            'syntax-highlighting' \
            'autosuggestions' \
@@ -57,17 +66,12 @@ if [ -n "$INSIDE_EMACS" ]; then
            'docker' \
            'homebrew' \
            'osx' \
+           'history-substring-search' \
            'node' \
            'ssh' \
-           'history-substring-search' \
            'fasd' \
-           'terminal' \
            'git' \
-           'editor' \
-           'history' \
-           'directory' \
-           'wd' \
-           'spectrum'
+           'wd'
 fi
 
 #
@@ -83,8 +87,8 @@ zstyle ':prezto:module:autosuggestions:color' found ''
 #
 
 # Set the entries to ignore in static */etc/hosts* for host completion.
-zstyle ':prezto:module:completion:*:hosts' etc-host-ignores \
-       '0.0.0.0' '127.0.0.1'
+# zstyle ':prezto:module:completion:*:hosts' etc-host-ignores \
+#        '0.0.0.0' '127.0.0.1'
 
 #
 # Editor
@@ -105,7 +109,7 @@ zstyle ':prezto:module:editor' ps-context 'yes'
 
 # Ignore submodules when they are 'dirty', 'untracked', 'all', or 'none'.
 zstyle ':prezto:module:git:status:ignore' submodules 'all'
-zstyle ':prezto:module:git:log:context' format ''
+# zstyle ':prezto:module:git:log:context' format ''
 
 
 #
@@ -115,24 +119,20 @@ zstyle ':prezto:module:git:log:context' format ''
 # Set the command prefix on non-GNU systems.
 # zstyle ':prezto:module:gnu-utility' prefix 'g'
 
-#
-# History
-#
-
-export SHARE_HISTORY=true
+# export SHARE_HISTORY=true
 
 #
 # History Substring Search
 #
 
 # Set the query found color.
-zstyle ':prezto:module:history-substring-search:color' found ''
+# zstyle ':prezto:module:history-substring-search:color' found ''
 
 # Set the query not found color.
-zstyle ':prezto:module:history-substring-search:color' not-found ''
+# zstyle ':prezto:module:history-substring-search:color' not-found ''
 
 # Set the search globbing flags.
-zstyle ':prezto:module:history-substring-search' globbing-flags ''
+# zstyle ':prezto:module:history-substring-search' globbing-flags ''
 
 #
 # macOS
@@ -155,7 +155,7 @@ zstyle ':prezto:module:history-substring-search' globbing-flags ''
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
-# zstyle ':prezto:module:prompt' theme 'pure'
+zstyle ':prezto:module:prompt' theme 'sorin'
 
 # Set the working directory prompt display length.
 # By default, it is set to 'short'. Set it to 'long' (without '~' expansion)
@@ -165,13 +165,6 @@ zstyle ':prezto:module:history-substring-search' globbing-flags ''
 # Set the prompt to display the return code along with an indicator for non-zero
 # return codes. This is not supported by all prompts.
 # zstyle ':prezto:module:prompt' show-return-val 'yes'
-
-#
-# Ruby
-#
-
-# Auto switch the Ruby version on directory change.
-zstyle ':prezto:module:ruby:chruby' auto-switch 'yes'
 
 #
 # Python
@@ -189,6 +182,16 @@ zstyle ':prezto:module:ruby:chruby' auto-switch 'yes'
 
 # Auto switch the Ruby version on directory change.
 # zstyle ':prezto:module:ruby:chruby' auto-switch 'yes'
+
+#
+# Screen
+#
+
+# Auto start a session when Zsh is launched in a local terminal.
+# zstyle ':prezto:module:screen:auto-start' local 'yes'
+
+# Auto start a session when Zsh is launched in a SSH connection.
+# zstyle ':prezto:module:screen:auto-start' remote 'yes'
 
 #
 # SSH
