@@ -52,3 +52,5 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# To customize prompt, run `p9k_configure` or edit ~/.p10k.zsh.
+source ~/.p10k.zsh
