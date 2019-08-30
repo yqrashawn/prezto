@@ -14,11 +14,6 @@ then
     PS1='$ '
 fi
 
-source "${HOME}/.config/.zsh.d/.config.zsh"
-source "${HOME}/.config/.zsh.d/.keybind.zsh"
-source "${HOME}/.config/.zsh.d/.alias.zsh"
-source "${HOME}/.config/.zsh.d/.functions.zsh"
-source "${HOME}/.config/.zsh.d/.fzf.config.zsh"
 export RUST_SRC_PATH="$HOME/rust/src"
 
 # Preferred editor for local and remote sessions
@@ -52,5 +47,23 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# To customize prompt, run `p9k_configure` or edit ~/.p10k.zsh.
+
+source "${HOME}/.config/.zsh.d/.config.zsh"
+source "${HOME}/.config/.zsh.d/.keybind.zsh"
+source "${HOME}/.config/.zsh.d/.alias.zsh"
+source "${HOME}/.config/.zsh.d/.functions.zsh"
+source "${HOME}/.config/.zsh.d/.fzf.config.zsh"
+
+# You can customize your prompt by editing ~/.p10k.zsh.
+# To run Powerlevel10k configuration wizard, type 'p9k_configure'.
 source ~/.p10k.zsh
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/rashawnzhang/.config/yarn/global/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/rashawnzhang/.config/yarn/global/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/rashawnzhang/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/rashawnzhang/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f /Users/rashawnzhang/.config/yarn/global/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/rashawnzhang/.config/yarn/global/node_modules/tabtab/.completions/slss.zsh
