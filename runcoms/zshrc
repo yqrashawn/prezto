@@ -67,3 +67,7 @@ source ~/.p10k.zsh
 # tabtab source for slss package
 # uninstall by removing these lines or running `tabtab uninstall slss`
 [[ -f /Users/rashawnzhang/.config/yarn/global/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/rashawnzhang/.config/yarn/global/node_modules/tabtab/.completions/slss.zsh
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+export PATH="/usr/local/opt/ruby/bin:$PATH"
