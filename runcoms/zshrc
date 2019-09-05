@@ -40,6 +40,7 @@ source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/sqlite-history.zsh"
 alias d='cd ~/Downloads'
 
 [ -s "${HOME}/.jabba/jabba.sh" ] && source "${HOME}/.jabba/jabba.sh"
+jabba use openjdk@1.10.0
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then

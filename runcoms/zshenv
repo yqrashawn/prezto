@@ -39,3 +39,6 @@ export ANDROID_HOME=~/Library/Android/sdk
 export XDG_CONFIG_HOME="$HOME/.config/"
 export https_proxy=http://127.0.0.1:6152
 export http_proxy=http://127.0.0.1:6152
+
+export GEM_HOME="$(brew --prefix)/opt/gems"
+export GEM_PATH="$(brew --prefix)/opt/gems"
