@@ -57,7 +57,8 @@ source "${HOME}/.config/.zsh.d/.fzf.config.zsh"
 
 # You can customize your prompt by editing ~/.p10k.zsh.
 # To run Powerlevel10k configuration wizard, type 'p9k_configure'.
-source ~/.p10k.zsh
+# source ~/.p10k.zsh
+eval "$(starship init zsh)"
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
