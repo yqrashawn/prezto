@@ -15,7 +15,7 @@ fi
 export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk/"
 export ANDROID_HOME="$HOME/Library/Android/sdk/"
 
-export PATH="/Applications/Emacs.app/Contents/MacOS:/Applications/Alacritty.app/Contents/MacOS:$HOME/.cargo/bin:/usr/local/opt/python@2/bin/:/usr/local/lib/node_modules/.bin/:$HOME/.config/yarn/global/node_modules/.bin/:/usr/local/opt/curl/bin:/usr/local/opt/texinfo/bin:$HOME/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:$HOME/golang/bin/:/usr/local/opt/go/libexec/bin/:$HOME/local/bin/funcs:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:/Applications/SublimeText.app/Contents/SharedSupport/bin:/sbin:/bin"
+export PATH="/Applications/Alacritty.app/Contents/MacOS:$HOME/.cargo/bin:/usr/local/opt/python@2/bin/:/usr/local/lib/node_modules/.bin/:$HOME/.config/yarn/global/node_modules/.bin/:/usr/local/opt/curl/bin:/usr/local/opt/texinfo/bin:$HOME/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:$HOME/golang/bin/:/usr/local/opt/go/libexec/bin/:$HOME/local/bin/funcs:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:/Applications/SublimeText.app/Contents/SharedSupport/bin:/sbin:/bin"
 
 export YQ_MACHINE="macbook"
 export YQ_BLOG_DEV_MODE="false"
@@ -42,3 +42,6 @@ export http_proxy=http://127.0.0.1:6152
 
 export GEM_HOME="$(brew --prefix)/opt/gems"
 export GEM_PATH="$(brew --prefix)/opt/gems"
+
+# core utils
+PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
