@@ -51,6 +51,7 @@ if [ -n "$INSIDE_EMACS" ]; then
          'editor' \
          'history' \
          'directory' \
+         'abbrev' \
          'spectrum'
   else
     zstyle ':prezto:load' pmodule \
@@ -77,6 +78,7 @@ if [ -n "$INSIDE_EMACS" ]; then
            'editor' \
            'history' \
            'directory' \
+           'abbrev' \
            'spectrum'
 fi
 

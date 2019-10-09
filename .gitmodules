@@ -31,3 +31,6 @@
 [submodule "modules/prompt/external/powerlevel10k"]
 	path = modules/prompt/external/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
+[submodule "modules/abbrev/external"]
+	path = modules/abbrev/external
+	url = https://github.com/momo-lab/zsh-abbrev-alias.git
