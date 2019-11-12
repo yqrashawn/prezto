@@ -12,6 +12,7 @@ then
         unfunction preexec
     fi
     PS1='$ '
+    unset zle_bracketed_paste
 fi
 
 export RUST_SRC_PATH="$HOME/rust/src"
@@ -80,3 +81,4 @@ source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.in
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/curl/bin:$PATH"
+export PATH="/usr/local/opt/texinfo/bin:$PATH"
