@@ -85,3 +85,6 @@ export PATH="/usr/local/opt/texinfo/bin:$PATH"
 # jabba use 1.13.0-1
 # jabba use openjdk@1.11.0-2
 jabba use adopt@1.11.0-5
+
+eval "$(rbenv init -)"
+rbenv global 2.6.5
