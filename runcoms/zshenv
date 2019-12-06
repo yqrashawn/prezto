@@ -15,7 +15,28 @@ fi
 export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk/"
 export ANDROID_HOME="$HOME/Library/Android/sdk/"
 
-export PATH="/Applications/Alacritty.app/Contents/MacOS:$HOME/.cargo/bin:/usr/local/opt/python@2/bin/:/usr/local/lib/node_modules/.bin/:$HOME/.config/yarn/global/node_modules/.bin/:/usr/local/opt/curl/bin:/usr/local/opt/texinfo/bin:$HOME/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:$HOME/golang/bin/:/usr/local/opt/go/libexec/bin/:$HOME/local/bin/funcs:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:/Applications/SublimeText.app/Contents/SharedSupport/bin:/sbin:/bin"
+export PATH="
+/sbin:\
+/bin:\
+/usr/sbin:\
+/usr/bin:\
+/usr/local/sbin:\
+/usr/local/bin:\
+/usr/local/opt/coreutils/libexec/gnubin:\
+/usr/local/opt/python/bin:\
+/usr/local/opt/curl/bin:\
+/usr/local/opt/texinfo/bin:\
+/usr/local/opt/go/libexec/bin/:\
+/usr/local/opt/ruby/bin:\
+$HOME/.cargo/bin:\
+$HOME/golang/bin/:\
+$HOME/.config/yarn/global/node_modules/.bin/:\
+$ANDROID_HOME/tools:\
+$ANDROID_HOME/platform-tools:\
+$HOME/local/bin:\
+$HOME/local/bin/funcs:\
+/Applications/Alacritty.app/Contents/MacOS:\
+/Applications/SublimeText.app/Contents/SharedSupport/bin"
 
 export YQ_MACHINE="macbook"
 export YQ_BLOG_DEV_MODE="false"
