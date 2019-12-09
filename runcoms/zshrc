@@ -86,3 +86,7 @@ jabba use adopt@1.11.0-5
 
 eval "$(rbenv init -)"
 rbenv global 2.6.5
+
+export N_PREFIX=$HOME/.n
+export PATH=$N_PREFIX/bin:$PATH
+[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
