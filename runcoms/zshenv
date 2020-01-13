@@ -36,7 +36,7 @@ $ANDROID_HOME/platform-tools:\
 $HOME/local/bin:\
 $HOME/local/bin/funcs:\
 /Applications/Alacritty.app/Contents/MacOS:\
-/Applications/SublimeText.app/Contents/SharedSupport/bin"
+/Applications/Sublime Text.app/Contents/SharedSupport/bin"
 
 export YQ_MACHINE="macbook"
 export YQ_BLOG_DEV_MODE="false"

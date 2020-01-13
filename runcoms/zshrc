@@ -89,3 +89,5 @@ rbenv global 2.6.5
 
 export N_PREFIX=$HOME/.n
 export PATH=$N_PREFIX/bin:$PATH
+
+eval "$(direnv hook zsh)"
