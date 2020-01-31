@@ -81,6 +81,32 @@ if [ -n "$INSIDE_EMACS" ]; then
            'abbrev' \
            'spectrum'
 fi
+zstyle ':prezto:load' pmodule \
+       'environment' \
+       'terminal' \
+       'editor' \
+       'history' \
+       'directory' \
+       'spectrum' \
+       'utility' \
+       'prompt' \
+       'archive' \
+       'syntax-highlighting' \
+       'autosuggestions' \
+       'completion' \
+       'docker' \
+       'homebrew' \
+       'osx' \
+       'history-substring-search' \
+       'node' \
+       'ssh' \
+       'fasd' \
+       'git' \
+       'editor' \
+       'history' \
+       'directory' \
+       'abbrev' \
+       'spectrum'
 
 #
 # Autosuggestions
