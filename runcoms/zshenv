@@ -15,7 +15,10 @@ fi
 export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk/"
 export ANDROID_HOME="$HOME/Library/Android/sdk/"
 
+export N_PREFIX=$HOME/.n
 export PATH="
+/usr/local/opt/texinfo/bin:\
+$N_PREFIX/bin:\
 /sbin:\
 /bin:\
 /usr/sbin:\
@@ -66,9 +69,6 @@ export GEM_PATH="$(brew --prefix)/opt/gems"
 
 export TERM=xterm-24bit
 
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-export PATH="/usr/local/opt/curl/bin:$PATH"
-export PATH="/usr/local/opt/texinfo/bin:$PATH"
 [ -s "${HOME}/.jabba/jabba.sh" ] && source "${HOME}/.jabba/jabba.sh"
 # jabba use adopt-openj9@1.11.0-5
 # jabba use 1.13.0-1
@@ -77,6 +77,3 @@ jabba use adopt@1.11.0-5
 
 eval "$(rbenv init -)"
 rbenv global 2.6.5
-
-export N_PREFIX=$HOME/.n
-export PATH=$N_PREFIX/bin:$PATH
