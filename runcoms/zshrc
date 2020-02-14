@@ -84,6 +84,7 @@ export PATH="/usr/local/opt/texinfo/bin:$PATH"
 # jabba use openjdk@1.11.0-2
 jabba use adopt@1.11.0-5
 
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 eval "$(rbenv init -)"
 rbenv global 2.6.5
 
@@ -107,3 +108,6 @@ function vterm_printf(){
 if [[ "$INSIDE_EMACS" = 'vterm' ]]; then
   alias clear='vterm_printf "51;Evterm-clear-scrollback";tput clear'
 fi
+
+# added by travis gem
+[ -f /Users/yqrashawn/.travis/travis.sh ] && source /Users/yqrashawn/.travis/travis.sh

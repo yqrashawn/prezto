@@ -39,7 +39,8 @@ $ANDROID_HOME/platform-tools:\
 $HOME/local/bin:\
 $HOME/local/bin/funcs:\
 /Applications/Alacritty.app/Contents/MacOS:\
-/Applications/Sublime Text.app/Contents/SharedSupport/bin"
+/Applications/Sublime Text.app/Contents/SharedSupport/bin:\
+/usr/local/opt/gems/bin"
 
 export YQ_MACHINE="macbook"
 export YQ_BLOG_DEV_MODE="false"
@@ -74,6 +75,3 @@ export TERM=xterm-24bit
 # jabba use 1.13.0-1
 # jabba use openjdk@1.11.0-2
 jabba use adopt@1.11.0-5
-
-eval "$(rbenv init -)"
-rbenv global 2.6.5
