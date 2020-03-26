@@ -62,8 +62,12 @@ export ANDROID_HOME=~/Library/Android/sdk
 # export HOMEBREW_BUILD_FROM_SOURCE=true
 # export HOMEBREW_BUILD_FROM_SOURCE=false
 export XDG_CONFIG_HOME="$HOME/.config"
-export https_proxy=http://127.0.0.1:6152
-export http_proxy=http://127.0.0.1:6152
+export https_proxy=http://127.0.0.1:7890
+export http_proxy=http://127.0.0.1:7890
+export all_proxy=socks5://127.0.0.1:7891
+export HTTPS_PROXY=http://127.0.0.1:7890
+export HTTP_PROXY=http://127.0.0.1:7890
+export ALL_PROXY=socks5://127.0.0.1:7891
 
 export GEM_HOME="$(brew --prefix)/opt/gems"
 export GEM_PATH="$(brew --prefix)/opt/gems"
