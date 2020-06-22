@@ -48,11 +48,7 @@ if [ -n "$INSIDE_EMACS" ]; then
          'ssh' \
          'fasd' \
          'git' \
-         'editor' \
-         'history' \
-         'directory' \
-         'abbrev' \
-         'spectrum'
+         'abbrev'
   else
     zstyle ':prezto:load' pmodule \
            'environment' \
@@ -64,7 +60,6 @@ if [ -n "$INSIDE_EMACS" ]; then
            'utility' \
            'prompt' \
            'archive' \
-           'fzf-tab' \
            'syntax-highlighting' \
            'autosuggestions' \
            'completion' \
@@ -76,38 +71,9 @@ if [ -n "$INSIDE_EMACS" ]; then
            'ssh' \
            'fasd' \
            'git' \
-           'editor' \
-           'history' \
-           'directory' \
            'abbrev' \
            'spectrum'
 fi
-# zstyle ':prezto:load' pmodule \
-#        'environment' \
-#        'terminal' \
-#        'editor' \
-#        'history' \
-#        'directory' \
-#        'spectrum' \
-#        'utility' \
-#        'prompt' \
-#        'archive' \
-#        'syntax-highlighting' \
-#        'autosuggestions' \
-#        'completion' \
-#        'docker' \
-#        'homebrew' \
-#        'osx' \
-#        'history-substring-search' \
-#        'node' \
-#        'ssh' \
-#        'fasd' \
-#        'git' \
-#        'editor' \
-#        'history' \
-#        'directory' \
-#        'abbrev' \
-#        'spectrum'
 
 #
 # Autosuggestions
