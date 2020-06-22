@@ -34,3 +34,6 @@
 [submodule "modules/abbrev/external"]
 	path = modules/abbrev/external
 	url = https://github.com/momo-lab/zsh-abbrev-alias.git
+[submodule "modules/fzf-tab/external"]
+	path = modules/fzf-tab/external
+	url = https://github.com/Aloxaf/fzf-tab
