@@ -14,59 +14,6 @@ then
     unset zle_bracketed_paste
 fi
 
-export RUST_SRC_PATH="$HOME/rust/src"
-
-# track prompt in vterm
-vterm_prompt_end() {
-  vterm_printf "51;A$(whoami)@$(hostname):$(pwd)";
-}
-setopt PROMPT_SUBST
-PROMPT=$PROMPT'%{$(vterm_prompt_end)%}'
-
-if [[ "$INSIDE_EMACS" = 'vterm' ]]; then
-  alias clear='vterm_printf "51;Evterm-clear-scrollback";tput clear'
-fi
-
-function vterm_printf(){
-  if [ -n "$TMUX" ]; then
-    # Tell tmux to pass the escape sequences through
-    # (Source: http://permalink.gmane.org/gmane.comp.terminal-emulators.tmux.user/1324)
-    printf "\ePtmux;\e\e]%s\007\e\\" "$1"
-  elif [ "${TERM%%-*}" = "screen" ]; then
-    # GNU screen (screen, screen-256color, screen-256color-bce)
-    printf "\eP\e]%s\007\e\\" "$1"
-  else
-    printf "\e]%s\e\\" "$1"
-  fi
-}
-
-autoload -U add-zsh-hook
-add-zsh-hook -Uz chpwd (){ print -Pn "\e]2;%m:%2~\a" }
-
-function vterm_cmd() {
-  local vterm_elisp
-  vterm_elisp=""
-  while [ $# -gt 0 ]; do
-    vterm_elisp="$vterm_elisp""$(printf '"%s" ' "$(printf "%s" "$1" | sed -e 's|\\|\\\\|g' -e 's|"|\\"|g')")"
-    shift
-  done
-  vterm_printf "51;E$vterm_elisp"
-}
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='emacsclient'
-# else
-#   export EDITOR='emacsclient'
-# fi
-
-# pro cd function
-jd() {
-  local projDir=$(pro search $1)
-  cd ${projDir}
-}
-
-
 if [[ $TERM != "emacs" && $TERM != "dumb" ]]; then
   # https://github.com/syl20bnr/spacemacs/wiki/Terminal
   export TERM=xterm-24bit
@@ -74,11 +21,10 @@ fi
 
 source $HOME/Dropbox/sync/sync.zsh
 
+
+
 source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/history-timer.zsh"
 source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/sqlite-history.zsh"
-
-alias d='cd ~/Downloads'
-
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
@@ -94,60 +40,17 @@ source "${HOME}/.config/.zsh.d/.alias.zsh"
 source "${HOME}/.config/.zsh.d/.functions.zsh"
 source "${HOME}/.config/.zsh.d/.fzf.config.zsh"
 
-# You can customize your prompt by editing ~/.p10k.zsh.
-# To run Powerlevel10k configuration wizard, type 'p9k_configure'.
-# source ~/.p10k.zsh
 eval "$(starship init zsh)"
 
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/rashawnzhang/.config/yarn/global/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/rashawnzhang/.config/yarn/global/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/rashawnzhang/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/rashawnzhang/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /Users/rashawnzhang/.config/yarn/global/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/rashawnzhang/.config/yarn/global/node_modules/tabtab/.completions/slss.zsh
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-function gi() { curl -sLw n https://www.gitignore.io/api/$@ ;}
-
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH="/usr/local/opt/texinfo/bin:$PATH"
-[ -s "${HOME}/.jabba/jabba.sh" ] && source "${HOME}/.jabba/jabba.sh"
-# jabba use adopt-openj9@1.11.0-5
-# jabba use 1.13.0-1
-# jabba use openjdk@1.11.0-2
-jabba use adopt@1.11.0-6
+[ -s "${HOME}/.jabba/jabba.sh" ] && source "${HOME}/.jabba/jabba.sh" && jabba use adopt@1.11.0-6
 
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
-eval "$(rbenv init -)"
-rbenv global 2.6.5
+eval "$(rbenv init -)" && rbenv global 2.6.5
 
 export N_PREFIX=$HOME/.n
 export PATH=$N_PREFIX/bin:$PATH
 
 eval "$(direnv hook zsh)"
-
-function vterm_printf(){
-  if [ -n "$TMUX" ]; then
-    # tell tmux to pass the escape sequences through
-    # (Source: http://permalink.gmane.org/gmane.comp.terminal-emulators.tmux.user/1324)
-    printf "\ePtmux;\e\e]%s\007\e\\" "$1"
-  elif [ "${TERM%%-*}" = "screen" ]; then
-    # GNU screen (screen, screen-256color, screen-256color-bce)
-    printf "\eP\e]%s\007\e\\" "$1"
-  else
-    printf "\e]%s\e\\" "$1"
-  fi
-}
-if [[ "$INSIDE_EMACS" = 'vterm' ]]; then
-  alias clear='vterm_printf "51;Evterm-clear-scrollback";tput clear'
-fi
-
-# added by travis gem
-[ -f /Users/yqrashawn/.travis/travis.sh ] && source /Users/yqrashawn/.travis/travis.sh
