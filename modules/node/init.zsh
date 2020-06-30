@@ -10,25 +10,48 @@
 if [[ -s "${NVM_DIR:=$HOME/.nvm}/nvm.sh" ]]; then
   source "${NVM_DIR}/nvm.sh"
 
-# Load package manager installed NVM into the shell session.
+  # Load package manager installed NVM into the shell session.
 elif (( $+commands[brew] )) && \
-  [[ -d "${nvm_prefix::="$(brew --prefix 2> /dev/null)"/opt/nvm}" ]]; then
+       [[ -d "${nvm_prefix::="$(brew --prefix 2> /dev/null)"/opt/nvm}" ]]; then
   source "$(brew --prefix nvm)/nvm.sh"
   unset nvm_prefix
 
-# Load manually installed nodenv into the shell session.
+  # Load manually installed nodenv into the shell session.
 elif [[ -s "${NODENV_ROOT:=$HOME/.nodenv}/bin/nodenv" ]]; then
   path=("${NODENV_ROOT}/bin" $path)
   eval "$(nodenv init - --no-rehash zsh)"
 
-# Load package manager installed nodenv into the shell session.
+  # Load package manager installed nodenv into the shell session.
 elif (( $+commands[nodenv] )); then
   eval "$(nodenv init - --no-rehash zsh)"
 
-# Return if requirements are not found.
+  # Return if requirements are not found.
 elif (( ! $+commands[node] )); then
   return 1
 fi
+
+## nvm
+# place this after nvm initialization!
+autoload -U add-zsh-hook
+load-nvmrc() {
+  local node_version="$(nvm version)"
+  local nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$node_version" ]; then
+      nvm use
+    fi
+  elif [ "$node_version" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
 
 # Load NPM and known helper completions.
 typeset -A compl_commands=(
@@ -43,8 +66,8 @@ for compl_command in "${(k)compl_commands[@]}"; do
 
     # Completion commands are slow; cache their output if old or missing.
     if [[ "$commands[$compl_command]" -nt "$cache_file" \
-          || "${ZDOTDIR:-$HOME}/.zpreztorc" -nt "$cache_file" \
-          || ! -s "$cache_file" ]]; then
+            || "${ZDOTDIR:-$HOME}/.zpreztorc" -nt "$cache_file" \
+            || ! -s "$cache_file" ]]; then
       mkdir -p "$cache_file:h"
       command ${=compl_commands[$compl_command]} >! "$cache_file" 2> /dev/null
     fi
