@@ -51,31 +51,33 @@ if [ -n "$INSIDE_EMACS" ]; then
          'ssh' \
          'fasd' \
          'git' \
-         'abbrev'
-  else
-    zstyle ':prezto:load' pmodule \
-           'environment' \
-           'terminal' \
-           'editor' \
-           'history' \
-           'directory' \
-           'spectrum' \
-           'utility' \
-           'prompt' \
-           'archive' \
-           'syntax-highlighting' \
-           'autosuggestions' \
-           'completion' \
-           'docker' \
-           'homebrew' \
-           'osx' \
-           'history-substring-search' \
-           'node' \
-           'ssh' \
-           'fasd' \
-           'git' \
-           'abbrev' \
-           'spectrum'
+         'abbrev' \
+         'fnm'
+else
+  zstyle ':prezto:load' pmodule \
+         'environment' \
+         'terminal' \
+         'editor' \
+         'history' \
+         'directory' \
+         'spectrum' \
+         'utility' \
+         'prompt' \
+         'archive' \
+         'syntax-highlighting' \
+         'autosuggestions' \
+         'completion' \
+         'docker' \
+         'homebrew' \
+         'osx' \
+         'history-substring-search' \
+         'node' \
+         'ssh' \
+         'fasd' \
+         'git' \
+         'abbrev' \
+         'spectrum' \
+         'fnm'
 fi
 
 #
@@ -92,7 +94,7 @@ zstyle ':prezto:module:autosuggestions:color' found ''
 
 # Set the entries to ignore in static */etc/hosts* for host completion.
 # zstyle ':prezto:module:completion:*:hosts' etc-host-ignores \
-#        '0.0.0.0' '127.0.0.1'
+  #        '0.0.0.0' '127.0.0.1'
 
 #
 # Editor
