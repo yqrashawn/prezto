@@ -8,11 +8,9 @@ export FNM_LOGLEVEL=info
 autoload -U add-zsh-hook
 _fnm_autoload_hook () {
   if [[ -f .node-version && -r .node-version ]]; then
-    echo "fnm: Found .node-version"
-    fnm use
+    fnm --log-level=error use --install-if-missing
   elif [[ -f .nvmrc && -r .nvmrc ]]; then
-    echo "fnm: Found .nvmrc"
-    fnm use
+    fnm --log-level=error use --install-if-missing
   fi
 }
 

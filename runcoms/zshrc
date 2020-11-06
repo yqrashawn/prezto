@@ -19,18 +19,8 @@ if [[ $TERM != "emacs" && $TERM != "dumb" ]]; then
   export TERM=xterm-24bit
 fi
 
-source $HOME/Dropbox/sync/sync.zsh
-
-
-
 source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/history-timer.zsh"
 source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/sqlite-history.zsh"
-
-# Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
-
 source "${HOME}/.config/.zsh.d/.config.zsh"
 source "${HOME}/.config/.zsh.d/.keybind.zsh"
 source "${HOME}/.config/.zsh.d/.alias.zsh"
@@ -39,17 +29,10 @@ source "${HOME}/.config/.zsh.d/.fzf.config.zsh"
 
 eval "$(starship init zsh)"
 
-export PATH="/usr/local/opt/curl/bin:$PATH"
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-export PATH="/usr/local/opt/curl/bin:$PATH"
-export PATH="/usr/local/opt/texinfo/bin:$PATH"
-[ -s "${HOME}/.jabba/jabba.sh" ] && source "${HOME}/.jabba/jabba.sh" && jabba use adopt@1.11.0-6
-
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 eval "$(rbenv init -)" && rbenv global 2.6.5
 
-# export N_PREFIX=$HOME/.n
-# export PATH=$N_PREFIX/bin:$PATH
+[ -s "${HOME}/.jabba/jabba.sh" ] && source "${HOME}/.jabba/jabba.sh"
+jabba use adopt@1.11.0-6
 
 eval "$(direnv hook zsh)"
-eval "$(fnm env --multi)"
+eval "$(fnm env)"
