@@ -29,10 +29,10 @@ source "${HOME}/.config/.zsh.d/.fzf.config.zsh"
 
 eval "$(starship init zsh)"
 
-eval "$(rbenv init -)" && rbenv global 2.6.5
+# eval "$(rbenv init -)" && rbenv global 2.6.5
 
-[ -s "${HOME}/.jabba/jabba.sh" ] && source "${HOME}/.jabba/jabba.sh"
-jabba use adopt@1.11.0-6
+# [ -s "${HOME}/.jabba/jabba.sh" ] && source "${HOME}/.jabba/jabba.sh"
+# jabba use adopt@1.11.0-6
 
-eval "$(direnv hook zsh)"
-eval "$(fnm env)"
+# eval "$(direnv hook zsh)"
+# eval "$(fnm env)"

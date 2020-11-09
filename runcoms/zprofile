@@ -66,4 +66,73 @@ if (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
 fi
 
-export PATH="$HOME/.cargo/bin:$PATH"
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+# export ANDROID_SDK_ROOT="/usr/local/share/android-sdk
+export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk/"
+export ANDROID_HOME="$HOME/Library/Android/sdk/"
+
+export PATH="\
+/Applications/Alacritty.app/Contents/MacOS:\
+/Applications/Emacs.app/Contents/MacOS/bin:\
+$HOME/.cargo/bin:\
+$HOME/golang/bin:\
+$HOME/local/bin/funcs:\
+$HOME/local/bin:\
+$HOME/.config/yarn/global/node_modules/.bin:\
+/usr/local/opt/coreutils/libexec/gnubin:\
+/usr/local/opt/curl/bin:\
+/usr/local/opt/texinfo/bin:\
+/usr/local/opt/coreutils/libexec/gnubin:\
+/usr/local/opt/python/bin:\
+/usr/local/opt/curl/bin:\
+/usr/local/opt/texinfo/bin:\
+/usr/local/opt/go/libexec/bin:\
+/usr/local/bin:$PATH"
+
+export YQ_MACHINE="macbook"
+export YQ_BLOG_DEV_MODE="false"
+
+#source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"
+export GOROOT=/usr/local/opt/go/libexec
+export GOBIN=$HOME/golang/bin
+export SSH_KEY_PATH="~/.ssh/id_rsa"
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export GOPATH=$HOME/golang
+export ROAMER_EDITOR=emacsclient
+export PYENV_ROOT="$HOME/.pyenv"
+export EMAIL="namy.19@gmail.com"
+export RUST_SRC_PATH="$HOME/rust/src"
+export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
+export ANDROID_HOME=~/Library/Android/sdk
+
+# export HOMEBREW_BUILD_FROM_SOURCE=true
+# export HOMEBREW_BUILD_FROM_SOURCE=false
+export XDG_CONFIG_HOME="$HOME/.config"
+# export https_proxy=http://127.0.0.1:6152
+# export http_proxy=http://127.0.0.1:6152
+# export all_proxy=socks5://127.0.0.1:6153
+# export HTTPS_PROXY=http://127.0.0.1:6152
+# export HTTP_PROXY=http://127.0.0.1:6152
+# export ALL_PROXY=socks5://127.0.0.1:6153
+
+export GEM_HOME="$(brew --prefix)/opt/gems"
+export GEM_PATH="$(brew --prefix)/opt/gems"
+
+if [[ $TERM != "emacs" && $TERM != "dumb" ]]; then
+  export TERM=xterm-24bit
+fi
+
+source $HOME/Dropbox/sync/sync.zsh
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+
+eval "$(rbenv init -)" && rbenv global 2.6.5
+
+# [ -s "${HOME}/.jabba/jabba.sh" ] && source "${HOME}/.jabba/jabba.sh"
+# jabba use adopt@1.11.0-6
+
+eval "$(direnv hook zsh)"
+eval "$(fnm env)"
