@@ -105,7 +105,6 @@ export GOPATH=$HOME/golang
 export ROAMER_EDITOR=emacsclient
 export PYENV_ROOT="$HOME/.pyenv"
 export EMAIL="namy.19@gmail.com"
-export RUST_SRC_PATH="$HOME/rust/src"
 export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
 export ANDROID_HOME=~/Library/Android/sdk
 
