@@ -14,11 +14,6 @@ then
     unset zle_bracketed_paste
 fi
 
-if [[ $TERM != "emacs" && $TERM != "dumb" ]]; then
-  # https://github.com/syl20bnr/spacemacs/wiki/Terminal
-  export TERM=xterm-24bit
-fi
-
 source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/history-timer.zsh"
 source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/sqlite-history.zsh"
 source "${HOME}/.config/.zsh.d/.config.zsh"
