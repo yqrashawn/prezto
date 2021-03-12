@@ -136,3 +136,9 @@ jabba use adopt@1.11.0-6
 
 eval "$(direnv hook zsh)"
 eval "$(fnm env)"
+
+# Created by `pipx` on 2021-03-05 06:38:16
+export PATH="$PATH:$HOME/.local/bin"
+
+# Created by `pipx` on 2021-03-05 06:38:18
+export PATH="$PATH:$HOME/Library/Python/3.9/bin"
