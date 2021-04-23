@@ -47,14 +47,14 @@ zstyle ':prezto:load' pmodule \
        'docker' \
        'homebrew' \
        'osx' \
-       'history-substring-search' \
        'node' \
        'ssh' \
        'fasd' \
        'git' \
        'abbrev' \
        'spectrum' \
-       'fnm'
+       'fnm' \
+       'history-substring-search'
 # fi
 
 #
