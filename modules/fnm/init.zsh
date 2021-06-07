@@ -1,3 +1,7 @@
+if (( ! $+commands[fnm] )); then
+  return 1
+fi
+
 # fnm auto change node version on cd
 export PATH=$HOME/.fnm/current/bin:$PATH
 export FNM_MULTISHELL_PATH=$HOME/.fnm/current
@@ -16,3 +20,5 @@ _fnm_autoload_hook () {
 
 add-zsh-hook chpwd _fnm_autoload_hook \
   && _fnm_autoload_hook
+
+eval "$(fnm env)"

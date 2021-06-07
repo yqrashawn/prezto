@@ -35,6 +35,7 @@ zstyle ':prezto:load' pmodule \
        'environment' \
        'terminal' \
        'editor' \
+       'zoxide' \
        'history' \
        'directory' \
        'spectrum' \
@@ -54,6 +55,12 @@ zstyle ':prezto:load' pmodule \
        'abbrev' \
        'spectrum' \
        'fnm' \
+       'thefuck' \
+       'python' \
+       'ruby' \
+       'direnv' \
+       'jabba' \
+       'babashka' \
        'history-substring-search'
 # fi
 

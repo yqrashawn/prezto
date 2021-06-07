@@ -34,3 +34,6 @@
 [submodule "modules/abbrev/external"]
 	path = modules/abbrev/external
 	url = https://github.com/momo-lab/zsh-abbrev-alias.git
+[submodule "contrib"]
+	path = contrib
+	url = https://github.com/belak/prezto-contrib
