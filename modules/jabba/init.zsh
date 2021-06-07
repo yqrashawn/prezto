@@ -3,5 +3,3 @@
 if (( ! $+commands[jabba] )); then
   return 1
 fi
-
-jabba use graalvm@21.1.0

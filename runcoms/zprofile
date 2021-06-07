@@ -128,3 +128,5 @@ fi
 
 source $HOME/Dropbox/sync/sync.zsh
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+
+jabba use graalvm@21.1.0
