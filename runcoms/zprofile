@@ -91,7 +91,7 @@ $HOME/.config/yarn/global/node_modules/.bin:\
 /usr/local/opt/curl/bin:\
 /usr/local/opt/texinfo/bin:\
 /usr/local/opt/go/libexec/bin:\
-/usr/local/bin:$PATH"
+$PATH"
 
 export YQ_MACHINE="macbook"
 export YQ_BLOG_DEV_MODE="false"
@@ -130,3 +130,5 @@ source $HOME/Dropbox/sync/sync.zsh
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
 jabba use graalvm@21.1.0
+
+if [ -e /Users/yqrashawn/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/yqrashawn/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
