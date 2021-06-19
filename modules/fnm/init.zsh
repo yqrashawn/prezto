@@ -1,5 +1,6 @@
 if (( ! $+commands[fnm] )); then
-  return 1
+  echo "Installing fnm"
+  brew install fnm
 fi
 
 # fnm auto change node version on cd
@@ -20,5 +21,11 @@ _fnm_autoload_hook () {
 
 add-zsh-hook chpwd _fnm_autoload_hook \
   && _fnm_autoload_hook
+
+# completion
+if ! typeset -f _fnm > /dev/null && test -f /usr/local/opt/fnm/share/zsh/site-functions/_fnm; then
+  fpath=(/usr/local/opt/fnm/share/zsh/site-functions $fpath)
+fi
+
 
 eval "$(fnm env)"

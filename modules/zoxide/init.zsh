@@ -1,5 +1,6 @@
 if (( ! $+commands[zoxide] )); then
-  return 1
+  echo "Installing zoxide..."
+  brew install zoxide
 fi
 
 eval "$(zoxide init zsh)"

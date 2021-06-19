@@ -1,14 +1,22 @@
 if (( ! $+commands[bat] )); then
-  return 1
+  echo "Installing bat"
+  brew install bat
 fi
 
 # install bat-extras
 if (( ! $+commands[batgrep] )); then
+  echo "Installing bat-extras"
   brew install eth-p/software/bat-extras
+fi
+
+# https://github.com/eth-p/bat-extras/blob/master/doc/batpipe.md
+if (( $+commands[batpipe] )); then
+  eval "$(batpipe)"
 fi
 
 # use bat as man pager
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+alias man='batman'
 
 # use bat as fzf previewer
 if (( $+commands[fzf] )); then
