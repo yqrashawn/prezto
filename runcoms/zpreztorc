@@ -40,15 +40,12 @@ zstyle ':prezto:load' pmodule \
        'spectrum' \
        'utility' \
        'archive' \
-       'syntax-highlighting' \
-       'autosuggestions' \
        'docker' \
        'homebrew' \
        'homebrew-plus' \
        'osx' \
        'node' \
        'ssh' \
-       'fasd' \
        'git' \
        'abbrev' \
        'spectrum' \
@@ -66,6 +63,10 @@ zstyle ':prezto:load' pmodule \
        'lazygit' \
        'bat' \
        'completion' \
+       'fasd' \
+       'fzf' \
+       'autosuggestions' \
+       'fast-syntax-highlighting' \
        'history-substring-search'
 # fi
 

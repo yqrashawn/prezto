@@ -21,7 +21,6 @@ source "${HOME}/.config/.zsh.d/.config.zsh"
 source "${HOME}/.config/.zsh.d/.keybind.zsh"
 source "${HOME}/.config/.zsh.d/.alias.zsh"
 source "${HOME}/.config/.zsh.d/.functions.zsh"
-source "${HOME}/.config/.zsh.d/.fzf.config.zsh"
 
 [[ -z "$EMACS" && -z "$VIM" && -z "$INSIDE_EMACS" ]] && eval "$(starship init zsh)"
 
