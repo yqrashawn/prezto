@@ -50,13 +50,13 @@ zstyle ':prezto:load' pmodule \
        'abbrev' \
        'spectrum' \
        'fnm' \
-       'thefuck' \
        'python' \
        'ruby' \
        'direnv' \
        'jabba' \
        'alias-tips' \
        'packages' \
+       'thefuck' \
        'babashka' \
        'ripgrep' \
        'zoxide' \

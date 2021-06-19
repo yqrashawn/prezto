@@ -20,6 +20,48 @@ if (( ! $+commands[fd] )); then
   brew install jq
 fi
 
+if (( ! $+commands[tldr] )); then
+  echo "Installing tldr"
+  brew install tldr
+fi
+
+if (( ! $+commands[http] )); then
+  echo "Installing httpie"
+  brew install httpie
+fi
+
+if (( ! $+commands[fuck] )); then
+  echo "Installing thefuck"
+  brew install thefuck
+fi
+
+if (( ! $+commands[procs] )); then
+  echo "Installing procs"
+  brew install procs
+fi
+
+if (( ! $+commands[btm] )); then
+  echo "Installing bottom"
+  brew install clementtsang/bottom/bottom
+fi
+
+
+if (( ! $+commands[glances] )); then
+  echo "Installing glances"
+  brew install glances
+fi
+
+if (( ! $+commands[curlie] )); then
+  echo "Installing curlie"
+  brew install rs/tap/curlie
+fi
+alias curl='curlie'
+
+if (( ! $+commands[xh] )); then
+  echo "Installing xh"
+  brew install xh
+fi
+
 # file explorer
 if (( ! $+commands[broot] )); then
   echo "Installing broot"
