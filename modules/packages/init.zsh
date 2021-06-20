@@ -62,6 +62,16 @@ if (( ! $+commands[xh] )); then
   brew install xh
 fi
 
+if (( ! $+commands[hunspell] )); then
+  echo "Installing hunspell"
+  brew install hunspell
+fi
+
+if (( ! $+commands[enchant-2] )); then
+  echo "Installing enchant"
+  brew install enchant
+fi
+
 # file explorer
 if (( ! $+commands[broot] )); then
   echo "Installing broot"
