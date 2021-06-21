@@ -76,6 +76,11 @@ if (( ! $+commands[enchant-2] )); then
   brew install enchant
 fi
 
+if (( ! $+commands[starship] )); then
+  echo "Installing starship"
+  brew install starship
+fi
+
 # file explorer
 if (( ! $+commands[broot] )); then
   echo "Installing broot"
