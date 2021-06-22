@@ -65,10 +65,12 @@ fi
 if (( ! $+commands[hunspell] )); then
   echo "Installing hunspell"
   brew install hunspell
-  # download dic from liberoffice
   mkdir -p $HOME/Library/Spelling/
-  curl -o $HOME/Library/Spelling/en_US.aff https://raw.githubusercontent.com/LibreOffice/dictionaries/master/en/en_US.aff
-  curl -o $HOME/Library/Spelling/en_US.dic https://raw.githubusercontent.com/LibreOffice/dictionaries/master/en/en_US.dic
+  # download dic from liberoffice
+  # curl -o $HOME/Library/Spelling/en_US.aff https://raw.githubusercontent.com/LibreOffice/dictionaries/master/en/en_US.aff
+  # curl -o $HOME/Library/Spelling/en_US.dic https://raw.githubusercontent.com/LibreOffice/dictionaries/master/en/en_US.dic
+  curl -o $HOME/Library/Spelling/en_US.aff 'https://cgit.freedesktop.org/libreoffice/dictionaries/plain/en/en_US.aff?id=a4473e06b56bfe35187e302754f6baaa8d75e54f'
+  curl -o $HOME/Library/Spelling/en_US.dic 'https://cgit.freedesktop.org/libreoffice/dictionaries/plain/en/en_US.dic?id=a4473e06b56bfe35187e302754f6baaa8d75e54f'
 fi
 
 if (( ! $+commands[enchant-2] )); then
