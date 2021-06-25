@@ -1,4 +1,9 @@
 # du
+if (( ! $+commands[trash] )); then
+  echo "Installing trash"
+  brew install trash
+fi
+# du in rust
 if (( ! $+commands[dust] )); then
   echo "Installing dust"
   brew install dust
@@ -44,7 +49,6 @@ if (( ! $+commands[btm] )); then
   echo "Installing bottom"
   brew install clementtsang/bottom/bottom
 fi
-
 
 if (( ! $+commands[glances] )); then
   echo "Installing glances"
