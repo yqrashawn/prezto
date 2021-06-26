@@ -1,3 +1,29 @@
+if (( ! $+commands[clojure-lsp] )); then
+  echo "Installing clojure-lsp"
+  brew install clojure-lsp/brew/clojure-lsp-native
+fi
+if (( ! $+commands[clj-kondo] )); then
+  echo "Installing clj-kondo"
+  brew install borkdude/brew/clj-kondo
+fi
+if (( ! $+commands[lein] )); then
+  echo "Installing leiningen"
+  brew install leiningen
+fi
+if (( ! $+commands[rustup] )); then
+  echo "Installing rustup"
+  brew install rustup-init
+  rustup-init
+fi
+if (( ! $+commands[shellcheck] )); then
+  echo "Installing shellcheck"
+  brew install shellcheck
+fi
+# lint markdown
+if (( ! $+commands[proselint] )); then
+  echo "Installing proselint"
+  brew install proselint
+fi
 # du
 if (( ! $+commands[trash] )); then
   echo "Installing trash"

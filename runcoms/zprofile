@@ -84,6 +84,7 @@ $HOME/local/bin/funcs:\
 $HOME/local/bin:\
 $HOME/.config/yarn/global/node_modules/.bin:\
 /usr/local/opt/coreutils/libexec/gnubin:\
+/usr/local/opt/sqlite/bin:\
 /usr/local/opt/curl/bin:\
 /usr/local/opt/texinfo/bin:\
 /usr/local/opt/coreutils/libexec/gnubin:\

@@ -6,6 +6,15 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #   Indrajit Raychaudhuri <irc@indrajit.com>
 #
+if (( ! $+commands[rbenv] )); then
+  echo "Installing rbenv"
+  brew install rbenv
+fi
+# markdown linter
+if (( ! $+commands[mdl] )); then
+  echo "Installing mdl"
+  gem install mdl
+fi
 
 # Possible lookup locations for manually installed rbenv and rvm.
 local_rbenv_paths=({$RBENV_ROOT,{$XDG_CONFIG_HOME/,$HOME/.}rbenv}/bin/rbenv(N))

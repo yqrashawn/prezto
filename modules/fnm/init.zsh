@@ -2,6 +2,14 @@ if (( ! $+commands[fnm] )); then
   echo "Installing fnm"
   brew install fnm
 fi
+if (( ! $+commands[yarn] )); then
+  echo "Installing yarn"
+  fnm install 16
+fi
+if (( ! $+commands[textlint] )); then
+  echo "Installing textlint"
+  yarn global add textlint
+fi
 
 # fnm auto change node version on cd
 export PATH=$HOME/.fnm/current/bin:$PATH
