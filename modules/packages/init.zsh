@@ -10,11 +10,6 @@ if (( ! $+commands[lein] )); then
   echo "Installing leiningen"
   brew install leiningen
 fi
-if (( ! $+commands[rustup] )); then
-  echo "Installing rustup"
-  brew install rustup-init
-  rustup-init
-fi
 if (( ! $+commands[shellcheck] )); then
   echo "Installing shellcheck"
   brew install shellcheck
